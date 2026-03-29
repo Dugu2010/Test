@@ -1,0 +1,73 @@
+/* ─── Global ──────────────────────────────────────────────────────────── */
+
+Screen {
+    layout: vertical;
+    background: $surface;
+    overflow: hidden;
+}
+
+/* ─── Chat view (scrollable message area) ─────────────────────────────── */
+
+#chat-view {
+    height: 1fr;          /* fill all remaining space */
+    min-height: 6;
+    padding: 1 2;
+    background: $surface;
+    scrollbar-size: 1 1;
+}
+
+/* ─── Input dock ──────────────────────────────────────────────────────── */
+
+#input-area {
+    height: auto;
+    max-height: 7;
+    dock: bottom;
+    padding: 0 2;
+    background: $panel;
+    border-top: solid $accent;
+}
+
+#user-input {
+    width: 100%;
+    margin: 1 0;
+}
+
+/* ─── Messages ────────────────────────────────────────────────────────── */
+
+.message {
+    width: 100%;
+    margin: 1 0;
+}
+
+.user-message {
+    /* slight indent from left to visually separate */
+    margin-left: 4;
+    max-width: 100%;
+}
+
+.assistant-message {
+    margin-right: 2;
+    max-width: 100%;
+}
+
+/* ─── Welcome banner ──────────────────────────────────────────────────── */
+
+.welcome {
+    width: 100%;
+    text-align: center;
+    color: $text-muted;
+    margin: 2 0;
+    text-style: italic;
+}
+
+/* ─── Header / Footer ─────────────────────────────────────────────────── */
+
+Header {
+    dock: top;
+    height: 1;
+}
+
+Footer {
+    dock: bottom;
+    height: 1;
+}

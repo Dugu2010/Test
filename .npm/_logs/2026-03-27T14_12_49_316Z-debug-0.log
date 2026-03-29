@@ -1,0 +1,24 @@
+0 verbose cli /usr/bin/node /usr/bin/npm
+1 info using npm@10.9.4
+2 info using node@v22.22.0
+3 silly config load:file:/usr/lib/node_modules/npm/npmrc
+4 silly config load:file:/root/.npmrc
+5 silly config load:file:/usr/etc/npmrc
+6 verbose title npm view openclaw@latest version
+7 verbose argv "view" "openclaw@latest" "version"
+8 verbose logfile logs-max:10 dir:/root/.npm/_logs/2026-03-27T14_12_49_316Z-
+9 verbose logfile /root/.npm/_logs/2026-03-27T14_12_49_316Z-debug-0.log
+10 silly logfile done cleaning log files
+11 http fetch GET 200 https://registry.npmjs.org/npm 94ms
+12 http fetch GET 200 https://registry.npmjs.org/openclaw 143ms (cache miss)
+13 verbose cwd /root
+14 verbose os Linux 6.8.0-106-generic
+15 verbose node v22.22.0
+16 verbose npm  v10.9.4
+17 notice
+17 notice New major version of npm available! 10.9.4 -> 11.12.1
+17 notice Changelog: https://github.com/npm/cli/releases/tag/v11.12.1
+17 notice To update run: npm install -g npm@11.12.1
+17 notice  { force: true, [Symbol(proc-log.meta)]: true }
+18 verbose exit 0
+19 info ok

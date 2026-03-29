@@ -1,0 +1,1851 @@
+2026-03-28 14:52:06 [INFO] ai_agent: New session: 4f025c3f
+2026-03-28 14:52:06 [DEBUG] asyncio: Using selector: EpollSelector
+2026-03-28 14:52:13 [DEBUG] ai_agent: API request #1: model=meta/llama-3.1-405b-instruct, messages=2
+2026-03-28 14:52:13 [DEBUG] urllib3.connectionpool: Starting new HTTPS connection (1): integrate.api.nvidia.com:443
+2026-03-28 14:52:15 [DEBUG] urllib3.connectionpool: https://integrate.api.nvidia.com:443 "POST /v1/chat/completions HTTP/1.1" 200 750
+2026-03-28 14:52:15 [DEBUG] ai_agent: API response: {
+  "id": "chatcmpl-b1fda16a724b1e14",
+  "object": "chat.completion",
+  "created": 1774709533,
+  "model": "meta/llama-3.1-405b-instruct",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": null,
+        "refusal": null,
+        "annotations": null,
+        "audio": null,
+        "function_call": null,
+        "tool_calls": [
+          {
+            "id": "chatcmpl-tool-b4ba9d78fecf7cf4",
+            "type": "function",
+            "function": {
+              "name": "python_exec",
+              "arguments": "{\"code\": \"print(\"}"
+            }
+          }
+        ],
+        "reasoning": null,
+        "reasoning_content": null
+      },
+      "logprobs": null,
+      "finish_reason": "tool_calls",
+      "stop_reason": 128008,
+      "token_ids": null
+    }
+  ],
+  "service_tier": null,
+  "system_fingerprint": null,
+  "usage": {
+    "prompt_tokens": 1343,
+    "total_tokens": 1368,
+    "completion_tokens": 25,
+    "prompt_tokens_details
+2026-03-28 14:52:15 [INFO] ai_agent: Tool call: python_exec({"code": "print("})
+2026-03-28 14:52:15 [INFO] ai_agent: Executing tool: python_exec with args: {"code": "print("}
+2026-03-28 14:52:15 [INFO] ai_agent: python_exec: print(...
+2026-03-28 14:52:15 [DEBUG] ai_agent: API request #2: model=meta/llama-3.1-405b-instruct, messages=4
+2026-03-28 14:52:17 [DEBUG] urllib3.connectionpool: https://integrate.api.nvidia.com:443 "POST /v1/chat/completions HTTP/1.1" 200 750
+2026-03-28 14:52:17 [DEBUG] ai_agent: API response: {
+  "id": "chatcmpl-8132edfe6c14e34a",
+  "object": "chat.completion",
+  "created": 1774709535,
+  "model": "meta/llama-3.1-405b-instruct",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": null,
+        "refusal": null,
+        "annotations": null,
+        "audio": null,
+        "function_call": null,
+        "tool_calls": [
+          {
+            "id": "chatcmpl-tool-81483d1bca668a15",
+            "type": "function",
+            "function": {
+              "name": "python_exec",
+              "arguments": "{\"code\": \"print(\"}"
+            }
+          }
+        ],
+        "reasoning": null,
+        "reasoning_content": null
+      },
+      "logprobs": null,
+      "finish_reason": "tool_calls",
+      "stop_reason": 128008,
+      "token_ids": null
+    }
+  ],
+  "service_tier": null,
+  "system_fingerprint": null,
+  "usage": {
+    "prompt_tokens": 1450,
+    "total_tokens": 1468,
+    "completion_tokens": 18,
+    "prompt_tokens_details
+2026-03-28 14:52:17 [INFO] ai_agent: Tool call: python_exec({"code": "print("})
+2026-03-28 14:52:17 [INFO] ai_agent: Executing tool: python_exec with args: {"code": "print("}
+2026-03-28 14:52:17 [INFO] ai_agent: python_exec: print(...
+2026-03-28 14:52:17 [DEBUG] ai_agent: API request #3: model=meta/llama-3.1-405b-instruct, messages=6
+2026-03-28 14:52:18 [DEBUG] urllib3.connectionpool: https://integrate.api.nvidia.com:443 "POST /v1/chat/completions HTTP/1.1" 200 750
+2026-03-28 14:52:18 [DEBUG] ai_agent: API response: {
+  "id": "chatcmpl-82ffc080b7cd1d87",
+  "object": "chat.completion",
+  "created": 1774709538,
+  "model": "meta/llama-3.1-405b-instruct",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": null,
+        "refusal": null,
+        "annotations": null,
+        "audio": null,
+        "function_call": null,
+        "tool_calls": [
+          {
+            "id": "chatcmpl-tool-ba28185740ef8bc5",
+            "type": "function",
+            "function": {
+              "name": "python_exec",
+              "arguments": "{\"code\": \"print(\"}"
+            }
+          }
+        ],
+        "reasoning": null,
+        "reasoning_content": null
+      },
+      "logprobs": null,
+      "finish_reason": "tool_calls",
+      "stop_reason": 128008,
+      "token_ids": null
+    }
+  ],
+  "service_tier": null,
+  "system_fingerprint": null,
+  "usage": {
+    "prompt_tokens": 1557,
+    "total_tokens": 1575,
+    "completion_tokens": 18,
+    "prompt_tokens_details
+2026-03-28 14:52:18 [INFO] ai_agent: Tool call: python_exec({"code": "print("})
+2026-03-28 14:52:18 [INFO] ai_agent: Executing tool: python_exec with args: {"code": "print("}
+2026-03-28 14:52:18 [INFO] ai_agent: python_exec: print(...
+2026-03-28 14:52:18 [DEBUG] ai_agent: API request #4: model=meta/llama-3.1-405b-instruct, messages=8
+2026-03-28 14:52:19 [DEBUG] urllib3.connectionpool: https://integrate.api.nvidia.com:443 "POST /v1/chat/completions HTTP/1.1" 200 750
+2026-03-28 14:52:19 [DEBUG] ai_agent: API response: {
+  "id": "chatcmpl-bda2fe25abd23c36",
+  "object": "chat.completion",
+  "created": 1774709538,
+  "model": "meta/llama-3.1-405b-instruct",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": null,
+        "refusal": null,
+        "annotations": null,
+        "audio": null,
+        "function_call": null,
+        "tool_calls": [
+          {
+            "id": "chatcmpl-tool-a39f126eeb3078b7",
+            "type": "function",
+            "function": {
+              "name": "python_exec",
+              "arguments": "{\"code\": \"print(\"}"
+            }
+          }
+        ],
+        "reasoning": null,
+        "reasoning_content": null
+      },
+      "logprobs": null,
+      "finish_reason": "tool_calls",
+      "stop_reason": 128008,
+      "token_ids": null
+    }
+  ],
+  "service_tier": null,
+  "system_fingerprint": null,
+  "usage": {
+    "prompt_tokens": 1664,
+    "total_tokens": 1682,
+    "completion_tokens": 18,
+    "prompt_tokens_details
+2026-03-28 14:52:19 [INFO] ai_agent: Tool call: python_exec({"code": "print("})
+2026-03-28 14:52:19 [INFO] ai_agent: Executing tool: python_exec with args: {"code": "print("}
+2026-03-28 14:52:19 [INFO] ai_agent: python_exec: print(...
+2026-03-28 14:52:19 [DEBUG] ai_agent: API request #5: model=meta/llama-3.1-405b-instruct, messages=10
+2026-03-28 14:52:20 [DEBUG] urllib3.connectionpool: https://integrate.api.nvidia.com:443 "POST /v1/chat/completions HTTP/1.1" 200 750
+2026-03-28 14:52:20 [DEBUG] ai_agent: API response: {
+  "id": "chatcmpl-adebd4c808875c98",
+  "object": "chat.completion",
+  "created": 1774709539,
+  "model": "meta/llama-3.1-405b-instruct",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": null,
+        "refusal": null,
+        "annotations": null,
+        "audio": null,
+        "function_call": null,
+        "tool_calls": [
+          {
+            "id": "chatcmpl-tool-815ae5d626fb96a2",
+            "type": "function",
+            "function": {
+              "name": "python_exec",
+              "arguments": "{\"code\": \"print(\"}"
+            }
+          }
+        ],
+        "reasoning": null,
+        "reasoning_content": null
+      },
+      "logprobs": null,
+      "finish_reason": "tool_calls",
+      "stop_reason": 128008,
+      "token_ids": null
+    }
+  ],
+  "service_tier": null,
+  "system_fingerprint": null,
+  "usage": {
+    "prompt_tokens": 1771,
+    "total_tokens": 1789,
+    "completion_tokens": 18,
+    "prompt_tokens_details
+2026-03-28 14:52:20 [INFO] ai_agent: Tool call: python_exec({"code": "print("})
+2026-03-28 14:52:20 [INFO] ai_agent: Executing tool: python_exec with args: {"code": "print("}
+2026-03-28 14:52:20 [INFO] ai_agent: python_exec: print(...
+2026-03-28 14:52:20 [DEBUG] ai_agent: API request #6: model=meta/llama-3.1-405b-instruct, messages=12
+2026-03-28 14:52:20 [DEBUG] urllib3.connectionpool: https://integrate.api.nvidia.com:443 "POST /v1/chat/completions HTTP/1.1" 200 750
+2026-03-28 14:52:20 [DEBUG] ai_agent: API response: {
+  "id": "chatcmpl-95c822c7650f979f",
+  "object": "chat.completion",
+  "created": 1774709540,
+  "model": "meta/llama-3.1-405b-instruct",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": null,
+        "refusal": null,
+        "annotations": null,
+        "audio": null,
+        "function_call": null,
+        "tool_calls": [
+          {
+            "id": "chatcmpl-tool-94cd0ad64ec93c6d",
+            "type": "function",
+            "function": {
+              "name": "python_exec",
+              "arguments": "{\"code\": \"print(\"}"
+            }
+          }
+        ],
+        "reasoning": null,
+        "reasoning_content": null
+      },
+      "logprobs": null,
+      "finish_reason": "tool_calls",
+      "stop_reason": 128008,
+      "token_ids": null
+    }
+  ],
+  "service_tier": null,
+  "system_fingerprint": null,
+  "usage": {
+    "prompt_tokens": 1878,
+    "total_tokens": 1896,
+    "completion_tokens": 18,
+    "prompt_tokens_details
+2026-03-28 14:52:20 [INFO] ai_agent: Tool call: python_exec({"code": "print("})
+2026-03-28 14:52:20 [INFO] ai_agent: Executing tool: python_exec with args: {"code": "print("}
+2026-03-28 14:52:20 [INFO] ai_agent: python_exec: print(...
+2026-03-28 14:52:20 [DEBUG] ai_agent: API request #7: model=meta/llama-3.1-405b-instruct, messages=14
+2026-03-28 14:52:21 [DEBUG] urllib3.connectionpool: https://integrate.api.nvidia.com:443 "POST /v1/chat/completions HTTP/1.1" 200 750
+2026-03-28 14:52:21 [DEBUG] ai_agent: API response: {
+  "id": "chatcmpl-bacca525af2286f4",
+  "object": "chat.completion",
+  "created": 1774709541,
+  "model": "meta/llama-3.1-405b-instruct",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": null,
+        "refusal": null,
+        "annotations": null,
+        "audio": null,
+        "function_call": null,
+        "tool_calls": [
+          {
+            "id": "chatcmpl-tool-a55608f68d5289f1",
+            "type": "function",
+            "function": {
+              "name": "python_exec",
+              "arguments": "{\"code\": \"print(\"}"
+            }
+          }
+        ],
+        "reasoning": null,
+        "reasoning_content": null
+      },
+      "logprobs": null,
+      "finish_reason": "tool_calls",
+      "stop_reason": 128008,
+      "token_ids": null
+    }
+  ],
+  "service_tier": null,
+  "system_fingerprint": null,
+  "usage": {
+    "prompt_tokens": 1985,
+    "total_tokens": 2003,
+    "completion_tokens": 18,
+    "prompt_tokens_details
+2026-03-28 14:52:21 [INFO] ai_agent: Tool call: python_exec({"code": "print("})
+2026-03-28 14:52:21 [INFO] ai_agent: Executing tool: python_exec with args: {"code": "print("}
+2026-03-28 14:52:21 [INFO] ai_agent: python_exec: print(...
+2026-03-28 14:52:21 [DEBUG] ai_agent: API request #8: model=meta/llama-3.1-405b-instruct, messages=16
+2026-03-28 14:52:22 [DEBUG] urllib3.connectionpool: https://integrate.api.nvidia.com:443 "POST /v1/chat/completions HTTP/1.1" 200 750
+2026-03-28 14:52:22 [DEBUG] ai_agent: API response: {
+  "id": "chatcmpl-ae37823c2b51d1e8",
+  "object": "chat.completion",
+  "created": 1774709541,
+  "model": "meta/llama-3.1-405b-instruct",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": null,
+        "refusal": null,
+        "annotations": null,
+        "audio": null,
+        "function_call": null,
+        "tool_calls": [
+          {
+            "id": "chatcmpl-tool-84f588f31e9a356a",
+            "type": "function",
+            "function": {
+              "name": "python_exec",
+              "arguments": "{\"code\": \"print(\"}"
+            }
+          }
+        ],
+        "reasoning": null,
+        "reasoning_content": null
+      },
+      "logprobs": null,
+      "finish_reason": "tool_calls",
+      "stop_reason": 128008,
+      "token_ids": null
+    }
+  ],
+  "service_tier": null,
+  "system_fingerprint": null,
+  "usage": {
+    "prompt_tokens": 2092,
+    "total_tokens": 2110,
+    "completion_tokens": 18,
+    "prompt_tokens_details
+2026-03-28 14:52:22 [INFO] ai_agent: Tool call: python_exec({"code": "print("})
+2026-03-28 14:52:22 [INFO] ai_agent: Executing tool: python_exec with args: {"code": "print("}
+2026-03-28 14:52:22 [INFO] ai_agent: python_exec: print(...
+2026-03-28 14:52:22 [DEBUG] ai_agent: API request #9: model=meta/llama-3.1-405b-instruct, messages=18
+2026-03-28 14:52:23 [DEBUG] urllib3.connectionpool: https://integrate.api.nvidia.com:443 "POST /v1/chat/completions HTTP/1.1" 200 750
+2026-03-28 14:52:23 [DEBUG] ai_agent: API response: {
+  "id": "chatcmpl-ab5f9f7f47427b00",
+  "object": "chat.completion",
+  "created": 1774709542,
+  "model": "meta/llama-3.1-405b-instruct",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": null,
+        "refusal": null,
+        "annotations": null,
+        "audio": null,
+        "function_call": null,
+        "tool_calls": [
+          {
+            "id": "chatcmpl-tool-80ebe15046697869",
+            "type": "function",
+            "function": {
+              "name": "python_exec",
+              "arguments": "{\"code\": \"print(\"}"
+            }
+          }
+        ],
+        "reasoning": null,
+        "reasoning_content": null
+      },
+      "logprobs": null,
+      "finish_reason": "tool_calls",
+      "stop_reason": 128008,
+      "token_ids": null
+    }
+  ],
+  "service_tier": null,
+  "system_fingerprint": null,
+  "usage": {
+    "prompt_tokens": 2199,
+    "total_tokens": 2217,
+    "completion_tokens": 18,
+    "prompt_tokens_details
+2026-03-28 14:52:23 [INFO] ai_agent: Tool call: python_exec({"code": "print("})
+2026-03-28 14:52:23 [INFO] ai_agent: Executing tool: python_exec with args: {"code": "print("}
+2026-03-28 14:52:23 [INFO] ai_agent: python_exec: print(...
+2026-03-28 14:52:23 [DEBUG] ai_agent: API request #10: model=meta/llama-3.1-405b-instruct, messages=20
+2026-03-28 14:53:07 [INFO] ai_agent: New session: 273784b7
+2026-03-28 14:53:07 [DEBUG] asyncio: Using selector: EpollSelector
+2026-03-28 14:53:12 [DEBUG] asyncio: Using selector: EpollSelector
+2026-03-28 14:53:27 [DEBUG] asyncio: Using selector: EpollSelector
+2026-03-28 14:53:57 [INFO] ai_agent: Model changed to: moonshotai/kimi-k2-instruct
+2026-03-28 14:53:57 [DEBUG] asyncio: Using selector: EpollSelector
+2026-03-28 14:53:59 [DEBUG] ai_agent: API request #1: model=moonshotai/kimi-k2-instruct, messages=2
+2026-03-28 14:53:59 [DEBUG] urllib3.connectionpool: Starting new HTTPS connection (1): integrate.api.nvidia.com:443
+2026-03-28 14:54:01 [DEBUG] urllib3.connectionpool: https://integrate.api.nvidia.com:443 "POST /v1/chat/completions HTTP/1.1" 200 940
+2026-03-28 14:54:01 [DEBUG] ai_agent: API response: {
+  "id": "chatcmpl-8a7b8fcc4de8b5c9",
+  "object": "chat.completion",
+  "created": 1774709640,
+  "model": "moonshotai/kimi-k2-instruct",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "I'll help you with your request. It looks like you entered just \"h\" - could you clarify what you'd like me to help you with? \n\nFor example, are you looking for:\n- Help with a specific command or task?\n- Information about available commands?\n- Something else entirely?\n\nPlease let me know what you need assistance with!",
+        "refusal": null,
+        "annotations": null,
+        "audio": null,
+        "function_call": null,
+        "tool_calls": [],
+        "reasoning": null,
+        "reasoning_content": null
+      },
+      "logprobs": null,
+      "finish_reason": "stop",
+      "stop_reason": 163586,
+      "token_ids": null
+    }
+  ],
+  "service_tier": null,
+  "system_fingerprint": null,
+  "usage": {
+    "prompt_tokens": 1021,
+    "tota
+2026-03-28 14:54:01 [DEBUG] markdown_it.rules_block.code: entering code: StateBlock(line=0,level=0,tokens=0), 0, 8, False
+2026-03-28 14:54:01 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=0,level=0,tokens=0), 0, 8, False
+2026-03-28 14:54:01 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=0,level=0,tokens=0), 0, 8, False
+2026-03-28 14:54:01 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=0,level=0,tokens=0), 0, 8, False
+2026-03-28 14:54:01 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=0,level=0,tokens=0), 0, 8, False
+2026-03-28 14:54:01 [DEBUG] markdown_it.rules_block.reference: entering reference: StateBlock(line=0,level=0,tokens=0), 0, 8, False
+2026-03-28 14:54:01 [DEBUG] markdown_it.rules_block.html_block: entering html_block: StateBlock(line=0,level=0,tokens=0), 0, 8, False
+2026-03-28 14:54:01 [DEBUG] markdown_it.rules_block.heading: entering heading: StateBlock(line=0,level=0,tokens=0), 0, 8, False
+2026-03-28 14:54:01 [DEBUG] markdown_it.rules_block.lheading: entering lheading: StateBlock(line=0,level=0,tokens=0), 0, 8, False
+2026-03-28 14:54:01 [DEBUG] markdown_it.rules_block.paragraph: entering paragraph: StateBlock(line=0,level=0,tokens=0), 0, 8, False
+2026-03-28 14:54:01 [DEBUG] markdown_it.rules_block.code: entering code: StateBlock(line=2,level=0,tokens=3), 2, 8, False
+2026-03-28 14:54:01 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=2,level=0,tokens=3), 2, 8, False
+2026-03-28 14:54:01 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=2,level=0,tokens=3), 2, 8, False
+2026-03-28 14:54:01 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=2,level=0,tokens=3), 2, 8, False
+2026-03-28 14:54:01 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=2,level=0,tokens=3), 2, 8, False
+2026-03-28 14:54:01 [DEBUG] markdown_it.rules_block.reference: entering reference: StateBlock(line=2,level=0,tokens=3), 2, 8, False
+2026-03-28 14:54:01 [DEBUG] markdown_it.rules_block.html_block: entering html_block: StateBlock(line=2,level=0,tokens=3), 2, 8, False
+2026-03-28 14:54:01 [DEBUG] markdown_it.rules_block.heading: entering heading: StateBlock(line=2,level=0,tokens=3), 2, 8, False
+2026-03-28 14:54:01 [DEBUG] markdown_it.rules_block.lheading: entering lheading: StateBlock(line=2,level=0,tokens=3), 2, 8, False
+2026-03-28 14:54:01 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=2,level=0,tokens=3), 3, 8, True
+2026-03-28 14:54:01 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=2,level=0,tokens=3), 3, 8, True
+2026-03-28 14:54:01 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=2,level=0,tokens=3), 3, 8, True
+2026-03-28 14:54:01 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=2,level=0,tokens=3), 3, 8, True
+2026-03-28 14:54:01 [DEBUG] markdown_it.rules_block.paragraph: entering paragraph: StateBlock(line=2,level=0,tokens=3), 2, 8, False
+2026-03-28 14:54:01 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=2,level=0,tokens=3), 3, 8, True
+2026-03-28 14:54:01 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=2,level=0,tokens=3), 3, 8, True
+2026-03-28 14:54:01 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=2,level=0,tokens=3), 3, 8, True
+2026-03-28 14:54:01 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=2,level=0,tokens=3), 3, 8, True
+2026-03-28 14:54:01 [DEBUG] markdown_it.rules_block.code: entering code: StateBlock(line=3,level=0,tokens=6), 3, 8, False
+2026-03-28 14:54:01 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=3,level=0,tokens=6), 3, 8, False
+2026-03-28 14:54:01 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=3,level=0,tokens=6), 3, 8, False
+2026-03-28 14:54:01 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=3,level=0,tokens=6), 3, 8, False
+2026-03-28 14:54:01 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=3,level=0,tokens=6), 3, 8, False
+2026-03-28 14:54:01 [DEBUG] markdown_it.rules_block.code: entering code: StateBlock(line=3,level=2,tokens=8), 3, 8, False
+2026-03-28 14:54:01 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=3,level=2,tokens=8), 3, 8, False
+2026-03-28 14:54:01 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=3,level=2,tokens=8), 3, 8, False
+2026-03-28 14:54:01 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=3,level=2,tokens=8), 3, 8, False
+2026-03-28 14:54:01 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=3,level=2,tokens=8), 3, 8, False
+2026-03-28 14:54:01 [DEBUG] markdown_it.rules_block.reference: entering reference: StateBlock(line=3,level=2,tokens=8), 3, 8, False
+2026-03-28 14:54:01 [DEBUG] markdown_it.rules_block.html_block: entering html_block: StateBlock(line=3,level=2,tokens=8), 3, 8, False
+2026-03-28 14:54:01 [DEBUG] markdown_it.rules_block.heading: entering heading: StateBlock(line=3,level=2,tokens=8), 3, 8, False
+2026-03-28 14:54:01 [DEBUG] markdown_it.rules_block.lheading: entering lheading: StateBlock(line=3,level=2,tokens=8), 3, 8, False
+2026-03-28 14:54:01 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=3,level=2,tokens=8), 4, 8, True
+2026-03-28 14:54:01 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=3,level=2,tokens=8), 4, 8, True
+2026-03-28 14:54:01 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=3,level=2,tokens=8), 4, 8, True
+2026-03-28 14:54:01 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=3,level=2,tokens=8), 4, 8, True
+2026-03-28 14:54:01 [DEBUG] markdown_it.rules_block.paragraph: entering paragraph: StateBlock(line=3,level=2,tokens=8), 3, 8, False
+2026-03-28 14:54:01 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=3,level=2,tokens=8), 4, 8, True
+2026-03-28 14:54:01 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=3,level=2,tokens=8), 4, 8, True
+2026-03-28 14:54:01 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=3,level=2,tokens=8), 4, 8, True
+2026-03-28 14:54:01 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=3,level=2,tokens=8), 4, 8, True
+2026-03-28 14:54:01 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=4,level=1,tokens=12), 4, 8, True
+2026-03-28 14:54:01 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=4,level=1,tokens=12), 4, 8, True
+2026-03-28 14:54:01 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=4,level=1,tokens=12), 4, 8, True
+2026-03-28 14:54:01 [DEBUG] markdown_it.rules_block.code: entering code: StateBlock(line=4,level=2,tokens=13), 4, 8, False
+2026-03-28 14:54:01 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=4,level=2,tokens=13), 4, 8, False
+2026-03-28 14:54:01 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=4,level=2,tokens=13), 4, 8, False
+2026-03-28 14:54:01 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=4,level=2,tokens=13), 4, 8, False
+2026-03-28 14:54:01 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=4,level=2,tokens=13), 4, 8, False
+2026-03-28 14:54:01 [DEBUG] markdown_it.rules_block.reference: entering reference: StateBlock(line=4,level=2,tokens=13), 4, 8, False
+2026-03-28 14:54:01 [DEBUG] markdown_it.rules_block.html_block: entering html_block: StateBlock(line=4,level=2,tokens=13), 4, 8, False
+2026-03-28 14:54:01 [DEBUG] markdown_it.rules_block.heading: entering heading: StateBlock(line=4,level=2,tokens=13), 4, 8, False
+2026-03-28 14:54:01 [DEBUG] markdown_it.rules_block.lheading: entering lheading: StateBlock(line=4,level=2,tokens=13), 4, 8, False
+2026-03-28 14:54:01 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=4,level=2,tokens=13), 5, 8, True
+2026-03-28 14:54:01 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=4,level=2,tokens=13), 5, 8, True
+2026-03-28 14:54:01 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=4,level=2,tokens=13), 5, 8, True
+2026-03-28 14:54:01 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=4,level=2,tokens=13), 5, 8, True
+2026-03-28 14:54:01 [DEBUG] markdown_it.rules_block.paragraph: entering paragraph: StateBlock(line=4,level=2,tokens=13), 4, 8, False
+2026-03-28 14:54:01 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=4,level=2,tokens=13), 5, 8, True
+2026-03-28 14:54:01 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=4,level=2,tokens=13), 5, 8, True
+2026-03-28 14:54:01 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=4,level=2,tokens=13), 5, 8, True
+2026-03-28 14:54:01 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=4,level=2,tokens=13), 5, 8, True
+2026-03-28 14:54:01 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=5,level=1,tokens=17), 5, 8, True
+2026-03-28 14:54:01 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=5,level=1,tokens=17), 5, 8, True
+2026-03-28 14:54:01 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=5,level=1,tokens=17), 5, 8, True
+2026-03-28 14:54:01 [DEBUG] markdown_it.rules_block.code: entering code: StateBlock(line=5,level=2,tokens=18), 5, 8, False
+2026-03-28 14:54:01 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=5,level=2,tokens=18), 5, 8, False
+2026-03-28 14:54:01 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=5,level=2,tokens=18), 5, 8, False
+2026-03-28 14:54:01 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=5,level=2,tokens=18), 5, 8, False
+2026-03-28 14:54:01 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=5,level=2,tokens=18), 5, 8, False
+2026-03-28 14:54:01 [DEBUG] markdown_it.rules_block.reference: entering reference: StateBlock(line=5,level=2,tokens=18), 5, 8, False
+2026-03-28 14:54:01 [DEBUG] markdown_it.rules_block.html_block: entering html_block: StateBlock(line=5,level=2,tokens=18), 5, 8, False
+2026-03-28 14:54:01 [DEBUG] markdown_it.rules_block.heading: entering heading: StateBlock(line=5,level=2,tokens=18), 5, 8, False
+2026-03-28 14:54:01 [DEBUG] markdown_it.rules_block.lheading: entering lheading: StateBlock(line=5,level=2,tokens=18), 5, 8, False
+2026-03-28 14:54:01 [DEBUG] markdown_it.rules_block.paragraph: entering paragraph: StateBlock(line=5,level=2,tokens=18), 5, 8, False
+2026-03-28 14:54:01 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=7,level=1,tokens=22), 7, 8, True
+2026-03-28 14:54:01 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=7,level=1,tokens=22), 7, 8, True
+2026-03-28 14:54:01 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=7,level=1,tokens=22), 7, 8, True
+2026-03-28 14:54:01 [DEBUG] markdown_it.rules_block.code: entering code: StateBlock(line=7,level=0,tokens=23), 7, 8, False
+2026-03-28 14:54:01 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=7,level=0,tokens=23), 7, 8, False
+2026-03-28 14:54:01 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=7,level=0,tokens=23), 7, 8, False
+2026-03-28 14:54:01 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=7,level=0,tokens=23), 7, 8, False
+2026-03-28 14:54:01 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=7,level=0,tokens=23), 7, 8, False
+2026-03-28 14:54:01 [DEBUG] markdown_it.rules_block.reference: entering reference: StateBlock(line=7,level=0,tokens=23), 7, 8, False
+2026-03-28 14:54:01 [DEBUG] markdown_it.rules_block.html_block: entering html_block: StateBlock(line=7,level=0,tokens=23), 7, 8, False
+2026-03-28 14:54:01 [DEBUG] markdown_it.rules_block.heading: entering heading: StateBlock(line=7,level=0,tokens=23), 7, 8, False
+2026-03-28 14:54:01 [DEBUG] markdown_it.rules_block.lheading: entering lheading: StateBlock(line=7,level=0,tokens=23), 7, 8, False
+2026-03-28 14:54:01 [DEBUG] markdown_it.rules_block.paragraph: entering paragraph: StateBlock(line=7,level=0,tokens=23), 7, 8, False
+2026-03-28 14:54:01 [DEBUG] asyncio: Using selector: EpollSelector
+2026-03-28 14:54:30 [DEBUG] ai_agent: API request #2: model=moonshotai/kimi-k2-instruct, messages=4
+2026-03-28 14:54:32 [DEBUG] urllib3.connectionpool: https://integrate.api.nvidia.com:443 "POST /v1/chat/completions HTTP/1.1" 200 893
+2026-03-28 14:54:32 [DEBUG] ai_agent: API response: {
+  "id": "chatcmpl-8a9bdc90e37934a2",
+  "object": "chat.completion",
+  "created": 1774709670,
+  "model": "moonshotai/kimi-k2-instruct",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "Hello! How can I help you today? I can assist with various tasks like:\n\n- Running shell commands\n- File operations (create, read, edit, delete)\n- Searching files and directories\n- Executing Python code\n- Git operations\n- And more\n\nWhat would you like me to help you with?",
+        "refusal": null,
+        "annotations": null,
+        "audio": null,
+        "function_call": null,
+        "tool_calls": [],
+        "reasoning": null,
+        "reasoning_content": null
+      },
+      "logprobs": null,
+      "finish_reason": "stop",
+      "stop_reason": 163586,
+      "token_ids": null
+    }
+  ],
+  "service_tier": null,
+  "system_fingerprint": null,
+  "usage": {
+    "prompt_tokens": 1097,
+    "total_tokens": 1162,
+    "completion_tokens": 65,
+ 
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.code: entering code: StateBlock(line=0,level=0,tokens=0), 0, 10, False
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=0,level=0,tokens=0), 0, 10, False
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=0,level=0,tokens=0), 0, 10, False
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=0,level=0,tokens=0), 0, 10, False
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=0,level=0,tokens=0), 0, 10, False
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.reference: entering reference: StateBlock(line=0,level=0,tokens=0), 0, 10, False
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.html_block: entering html_block: StateBlock(line=0,level=0,tokens=0), 0, 10, False
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.heading: entering heading: StateBlock(line=0,level=0,tokens=0), 0, 10, False
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.lheading: entering lheading: StateBlock(line=0,level=0,tokens=0), 0, 10, False
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.paragraph: entering paragraph: StateBlock(line=0,level=0,tokens=0), 0, 10, False
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.code: entering code: StateBlock(line=2,level=0,tokens=3), 2, 10, False
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=2,level=0,tokens=3), 2, 10, False
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=2,level=0,tokens=3), 2, 10, False
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=2,level=0,tokens=3), 2, 10, False
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=2,level=0,tokens=3), 2, 10, False
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.code: entering code: StateBlock(line=2,level=2,tokens=5), 2, 10, False
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=2,level=2,tokens=5), 2, 10, False
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=2,level=2,tokens=5), 2, 10, False
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=2,level=2,tokens=5), 2, 10, False
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=2,level=2,tokens=5), 2, 10, False
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.reference: entering reference: StateBlock(line=2,level=2,tokens=5), 2, 10, False
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.html_block: entering html_block: StateBlock(line=2,level=2,tokens=5), 2, 10, False
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.heading: entering heading: StateBlock(line=2,level=2,tokens=5), 2, 10, False
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.lheading: entering lheading: StateBlock(line=2,level=2,tokens=5), 2, 10, False
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=2,level=2,tokens=5), 3, 10, True
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=2,level=2,tokens=5), 3, 10, True
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=2,level=2,tokens=5), 3, 10, True
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=2,level=2,tokens=5), 3, 10, True
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.paragraph: entering paragraph: StateBlock(line=2,level=2,tokens=5), 2, 10, False
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=2,level=2,tokens=5), 3, 10, True
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=2,level=2,tokens=5), 3, 10, True
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=2,level=2,tokens=5), 3, 10, True
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=2,level=2,tokens=5), 3, 10, True
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=3,level=1,tokens=9), 3, 10, True
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=3,level=1,tokens=9), 3, 10, True
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=3,level=1,tokens=9), 3, 10, True
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.code: entering code: StateBlock(line=3,level=2,tokens=10), 3, 10, False
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=3,level=2,tokens=10), 3, 10, False
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=3,level=2,tokens=10), 3, 10, False
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=3,level=2,tokens=10), 3, 10, False
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=3,level=2,tokens=10), 3, 10, False
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.reference: entering reference: StateBlock(line=3,level=2,tokens=10), 3, 10, False
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.html_block: entering html_block: StateBlock(line=3,level=2,tokens=10), 3, 10, False
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.heading: entering heading: StateBlock(line=3,level=2,tokens=10), 3, 10, False
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.lheading: entering lheading: StateBlock(line=3,level=2,tokens=10), 3, 10, False
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=3,level=2,tokens=10), 4, 10, True
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=3,level=2,tokens=10), 4, 10, True
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=3,level=2,tokens=10), 4, 10, True
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=3,level=2,tokens=10), 4, 10, True
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.paragraph: entering paragraph: StateBlock(line=3,level=2,tokens=10), 3, 10, False
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=3,level=2,tokens=10), 4, 10, True
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=3,level=2,tokens=10), 4, 10, True
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=3,level=2,tokens=10), 4, 10, True
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=3,level=2,tokens=10), 4, 10, True
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=4,level=1,tokens=14), 4, 10, True
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=4,level=1,tokens=14), 4, 10, True
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=4,level=1,tokens=14), 4, 10, True
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.code: entering code: StateBlock(line=4,level=2,tokens=15), 4, 10, False
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=4,level=2,tokens=15), 4, 10, False
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=4,level=2,tokens=15), 4, 10, False
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=4,level=2,tokens=15), 4, 10, False
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=4,level=2,tokens=15), 4, 10, False
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.reference: entering reference: StateBlock(line=4,level=2,tokens=15), 4, 10, False
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.html_block: entering html_block: StateBlock(line=4,level=2,tokens=15), 4, 10, False
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.heading: entering heading: StateBlock(line=4,level=2,tokens=15), 4, 10, False
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.lheading: entering lheading: StateBlock(line=4,level=2,tokens=15), 4, 10, False
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=4,level=2,tokens=15), 5, 10, True
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=4,level=2,tokens=15), 5, 10, True
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=4,level=2,tokens=15), 5, 10, True
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=4,level=2,tokens=15), 5, 10, True
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.paragraph: entering paragraph: StateBlock(line=4,level=2,tokens=15), 4, 10, False
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=4,level=2,tokens=15), 5, 10, True
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=4,level=2,tokens=15), 5, 10, True
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=4,level=2,tokens=15), 5, 10, True
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=4,level=2,tokens=15), 5, 10, True
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=5,level=1,tokens=19), 5, 10, True
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=5,level=1,tokens=19), 5, 10, True
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=5,level=1,tokens=19), 5, 10, True
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.code: entering code: StateBlock(line=5,level=2,tokens=20), 5, 10, False
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=5,level=2,tokens=20), 5, 10, False
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=5,level=2,tokens=20), 5, 10, False
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=5,level=2,tokens=20), 5, 10, False
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=5,level=2,tokens=20), 5, 10, False
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.reference: entering reference: StateBlock(line=5,level=2,tokens=20), 5, 10, False
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.html_block: entering html_block: StateBlock(line=5,level=2,tokens=20), 5, 10, False
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.heading: entering heading: StateBlock(line=5,level=2,tokens=20), 5, 10, False
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.lheading: entering lheading: StateBlock(line=5,level=2,tokens=20), 5, 10, False
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=5,level=2,tokens=20), 6, 10, True
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=5,level=2,tokens=20), 6, 10, True
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=5,level=2,tokens=20), 6, 10, True
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=5,level=2,tokens=20), 6, 10, True
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.paragraph: entering paragraph: StateBlock(line=5,level=2,tokens=20), 5, 10, False
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=5,level=2,tokens=20), 6, 10, True
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=5,level=2,tokens=20), 6, 10, True
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=5,level=2,tokens=20), 6, 10, True
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=5,level=2,tokens=20), 6, 10, True
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=6,level=1,tokens=24), 6, 10, True
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=6,level=1,tokens=24), 6, 10, True
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=6,level=1,tokens=24), 6, 10, True
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.code: entering code: StateBlock(line=6,level=2,tokens=25), 6, 10, False
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=6,level=2,tokens=25), 6, 10, False
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=6,level=2,tokens=25), 6, 10, False
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=6,level=2,tokens=25), 6, 10, False
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=6,level=2,tokens=25), 6, 10, False
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.reference: entering reference: StateBlock(line=6,level=2,tokens=25), 6, 10, False
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.html_block: entering html_block: StateBlock(line=6,level=2,tokens=25), 6, 10, False
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.heading: entering heading: StateBlock(line=6,level=2,tokens=25), 6, 10, False
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.lheading: entering lheading: StateBlock(line=6,level=2,tokens=25), 6, 10, False
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=6,level=2,tokens=25), 7, 10, True
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=6,level=2,tokens=25), 7, 10, True
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=6,level=2,tokens=25), 7, 10, True
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=6,level=2,tokens=25), 7, 10, True
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.paragraph: entering paragraph: StateBlock(line=6,level=2,tokens=25), 6, 10, False
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=6,level=2,tokens=25), 7, 10, True
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=6,level=2,tokens=25), 7, 10, True
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=6,level=2,tokens=25), 7, 10, True
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=6,level=2,tokens=25), 7, 10, True
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=7,level=1,tokens=29), 7, 10, True
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=7,level=1,tokens=29), 7, 10, True
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=7,level=1,tokens=29), 7, 10, True
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.code: entering code: StateBlock(line=7,level=2,tokens=30), 7, 10, False
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=7,level=2,tokens=30), 7, 10, False
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=7,level=2,tokens=30), 7, 10, False
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=7,level=2,tokens=30), 7, 10, False
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=7,level=2,tokens=30), 7, 10, False
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.reference: entering reference: StateBlock(line=7,level=2,tokens=30), 7, 10, False
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.html_block: entering html_block: StateBlock(line=7,level=2,tokens=30), 7, 10, False
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.heading: entering heading: StateBlock(line=7,level=2,tokens=30), 7, 10, False
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.lheading: entering lheading: StateBlock(line=7,level=2,tokens=30), 7, 10, False
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.paragraph: entering paragraph: StateBlock(line=7,level=2,tokens=30), 7, 10, False
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=9,level=1,tokens=34), 9, 10, True
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=9,level=1,tokens=34), 9, 10, True
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=9,level=1,tokens=34), 9, 10, True
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.code: entering code: StateBlock(line=9,level=0,tokens=35), 9, 10, False
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=9,level=0,tokens=35), 9, 10, False
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=9,level=0,tokens=35), 9, 10, False
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=9,level=0,tokens=35), 9, 10, False
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=9,level=0,tokens=35), 9, 10, False
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.reference: entering reference: StateBlock(line=9,level=0,tokens=35), 9, 10, False
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.html_block: entering html_block: StateBlock(line=9,level=0,tokens=35), 9, 10, False
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.heading: entering heading: StateBlock(line=9,level=0,tokens=35), 9, 10, False
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.lheading: entering lheading: StateBlock(line=9,level=0,tokens=35), 9, 10, False
+2026-03-28 14:54:32 [DEBUG] markdown_it.rules_block.paragraph: entering paragraph: StateBlock(line=9,level=0,tokens=35), 9, 10, False
+2026-03-28 14:54:32 [DEBUG] asyncio: Using selector: EpollSelector
+2026-03-28 14:54:35 [DEBUG] asyncio: Using selector: EpollSelector
+2026-03-28 14:55:07 [DEBUG] ai_agent: API request #3: model=moonshotai/kimi-k2-instruct, messages=6
+2026-03-28 14:55:10 [DEBUG] urllib3.connectionpool: https://integrate.api.nvidia.com:443 "POST /v1/chat/completions HTTP/1.1" 200 1080
+2026-03-28 14:55:10 [DEBUG] ai_agent: API response: {
+  "id": "chatcmpl-a2a9bfbf95d5191d",
+  "object": "chat.completion",
+  "created": 1774709707,
+  "model": "moonshotai/kimi-k2-instruct",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": null,
+        "refusal": null,
+        "annotations": null,
+        "audio": null,
+        "function_call": null,
+        "tool_calls": [
+          {
+            "id": "functions.file_write:0",
+            "type": "function",
+            "function": {
+              "name": "file_write",
+              "arguments": "{\"path\": \"index.html\", \"content\": \"<!DOCTYPE html>\\n<html lang=\\\"en\\\">\\n<head>\\n    <meta charset=\\\"UTF-8\\\">\\n    <meta name=\\\"viewport\\\" content=\\\"width=device-width, initial-scale=1.0\\\">\\n    <title>Welcome</title>\\n</head>\\n<body>\\n    <h1>Hello World!</h1>\\n    <p>This is your new index.html file.</p>\\n</body>\\n</html>\"}"
+            }
+          }
+        ],
+        "reasoning": null,
+        "reaso
+2026-03-28 14:55:10 [INFO] ai_agent: Tool call: file_write({"path": "index.html", "content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title)
+2026-03-28 14:55:10 [INFO] ai_agent: Executing tool: file_write with args: {"path": "index.html", "content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title
+2026-03-28 14:55:10 [INFO] ai_agent: file_write: index.html (270 chars)
+2026-03-28 14:55:10 [DEBUG] ai_agent: API request #4: model=moonshotai/kimi-k2-instruct, messages=8
+2026-03-28 14:55:13 [DEBUG] urllib3.connectionpool: https://integrate.api.nvidia.com:443 "POST /v1/chat/completions HTTP/1.1" 200 1006
+2026-03-28 14:55:13 [DEBUG] ai_agent: API response: {
+  "id": "chatcmpl-b1b04c82e625f7bc",
+  "object": "chat.completion",
+  "created": 1774709711,
+  "model": "moonshotai/kimi-k2-instruct",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "I've created an `index.html` file in the current directory with a basic HTML5 template. The file includes:\n\n- A proper HTML5 doctype declaration\n- Meta tags for character encoding and responsive viewport\n- A simple \"Hello World!\" heading and welcome message\n\nYou can now open this file in your web browser to see the result. Would you like me to add anything specific to the HTML file?",
+        "refusal": null,
+        "annotations": null,
+        "audio": null,
+        "function_call": null,
+        "tool_calls": [],
+        "reasoning": null,
+        "reasoning_content": null
+      },
+      "logprobs": null,
+      "finish_reason": "stop",
+      "stop_reason": 163586,
+      "token_ids": null
+    }
+  ],
+  "service_tier": null,
+  "system_fin
+2026-03-28 14:55:13 [DEBUG] markdown_it.rules_block.code: entering code: StateBlock(line=0,level=0,tokens=0), 0, 7, False
+2026-03-28 14:55:13 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=0,level=0,tokens=0), 0, 7, False
+2026-03-28 14:55:13 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=0,level=0,tokens=0), 0, 7, False
+2026-03-28 14:55:13 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=0,level=0,tokens=0), 0, 7, False
+2026-03-28 14:55:13 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=0,level=0,tokens=0), 0, 7, False
+2026-03-28 14:55:13 [DEBUG] markdown_it.rules_block.reference: entering reference: StateBlock(line=0,level=0,tokens=0), 0, 7, False
+2026-03-28 14:55:13 [DEBUG] markdown_it.rules_block.html_block: entering html_block: StateBlock(line=0,level=0,tokens=0), 0, 7, False
+2026-03-28 14:55:13 [DEBUG] markdown_it.rules_block.heading: entering heading: StateBlock(line=0,level=0,tokens=0), 0, 7, False
+2026-03-28 14:55:13 [DEBUG] markdown_it.rules_block.lheading: entering lheading: StateBlock(line=0,level=0,tokens=0), 0, 7, False
+2026-03-28 14:55:13 [DEBUG] markdown_it.rules_block.paragraph: entering paragraph: StateBlock(line=0,level=0,tokens=0), 0, 7, False
+2026-03-28 14:55:13 [DEBUG] markdown_it.rules_block.code: entering code: StateBlock(line=2,level=0,tokens=3), 2, 7, False
+2026-03-28 14:55:13 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=2,level=0,tokens=3), 2, 7, False
+2026-03-28 14:55:13 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=2,level=0,tokens=3), 2, 7, False
+2026-03-28 14:55:13 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=2,level=0,tokens=3), 2, 7, False
+2026-03-28 14:55:13 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=2,level=0,tokens=3), 2, 7, False
+2026-03-28 14:55:13 [DEBUG] markdown_it.rules_block.code: entering code: StateBlock(line=2,level=2,tokens=5), 2, 7, False
+2026-03-28 14:55:13 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=2,level=2,tokens=5), 2, 7, False
+2026-03-28 14:55:13 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=2,level=2,tokens=5), 2, 7, False
+2026-03-28 14:55:13 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=2,level=2,tokens=5), 2, 7, False
+2026-03-28 14:55:13 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=2,level=2,tokens=5), 2, 7, False
+2026-03-28 14:55:13 [DEBUG] markdown_it.rules_block.reference: entering reference: StateBlock(line=2,level=2,tokens=5), 2, 7, False
+2026-03-28 14:55:13 [DEBUG] markdown_it.rules_block.html_block: entering html_block: StateBlock(line=2,level=2,tokens=5), 2, 7, False
+2026-03-28 14:55:13 [DEBUG] markdown_it.rules_block.heading: entering heading: StateBlock(line=2,level=2,tokens=5), 2, 7, False
+2026-03-28 14:55:13 [DEBUG] markdown_it.rules_block.lheading: entering lheading: StateBlock(line=2,level=2,tokens=5), 2, 7, False
+2026-03-28 14:55:13 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=2,level=2,tokens=5), 3, 7, True
+2026-03-28 14:55:13 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=2,level=2,tokens=5), 3, 7, True
+2026-03-28 14:55:13 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=2,level=2,tokens=5), 3, 7, True
+2026-03-28 14:55:13 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=2,level=2,tokens=5), 3, 7, True
+2026-03-28 14:55:13 [DEBUG] markdown_it.rules_block.paragraph: entering paragraph: StateBlock(line=2,level=2,tokens=5), 2, 7, False
+2026-03-28 14:55:13 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=2,level=2,tokens=5), 3, 7, True
+2026-03-28 14:55:13 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=2,level=2,tokens=5), 3, 7, True
+2026-03-28 14:55:13 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=2,level=2,tokens=5), 3, 7, True
+2026-03-28 14:55:13 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=2,level=2,tokens=5), 3, 7, True
+2026-03-28 14:55:13 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=3,level=1,tokens=9), 3, 7, True
+2026-03-28 14:55:13 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=3,level=1,tokens=9), 3, 7, True
+2026-03-28 14:55:13 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=3,level=1,tokens=9), 3, 7, True
+2026-03-28 14:55:13 [DEBUG] markdown_it.rules_block.code: entering code: StateBlock(line=3,level=2,tokens=10), 3, 7, False
+2026-03-28 14:55:13 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=3,level=2,tokens=10), 3, 7, False
+2026-03-28 14:55:13 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=3,level=2,tokens=10), 3, 7, False
+2026-03-28 14:55:13 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=3,level=2,tokens=10), 3, 7, False
+2026-03-28 14:55:13 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=3,level=2,tokens=10), 3, 7, False
+2026-03-28 14:55:13 [DEBUG] markdown_it.rules_block.reference: entering reference: StateBlock(line=3,level=2,tokens=10), 3, 7, False
+2026-03-28 14:55:13 [DEBUG] markdown_it.rules_block.html_block: entering html_block: StateBlock(line=3,level=2,tokens=10), 3, 7, False
+2026-03-28 14:55:13 [DEBUG] markdown_it.rules_block.heading: entering heading: StateBlock(line=3,level=2,tokens=10), 3, 7, False
+2026-03-28 14:55:13 [DEBUG] markdown_it.rules_block.lheading: entering lheading: StateBlock(line=3,level=2,tokens=10), 3, 7, False
+2026-03-28 14:55:13 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=3,level=2,tokens=10), 4, 7, True
+2026-03-28 14:55:13 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=3,level=2,tokens=10), 4, 7, True
+2026-03-28 14:55:13 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=3,level=2,tokens=10), 4, 7, True
+2026-03-28 14:55:13 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=3,level=2,tokens=10), 4, 7, True
+2026-03-28 14:55:13 [DEBUG] markdown_it.rules_block.paragraph: entering paragraph: StateBlock(line=3,level=2,tokens=10), 3, 7, False
+2026-03-28 14:55:13 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=3,level=2,tokens=10), 4, 7, True
+2026-03-28 14:55:13 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=3,level=2,tokens=10), 4, 7, True
+2026-03-28 14:55:13 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=3,level=2,tokens=10), 4, 7, True
+2026-03-28 14:55:13 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=3,level=2,tokens=10), 4, 7, True
+2026-03-28 14:55:13 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=4,level=1,tokens=14), 4, 7, True
+2026-03-28 14:55:13 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=4,level=1,tokens=14), 4, 7, True
+2026-03-28 14:55:13 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=4,level=1,tokens=14), 4, 7, True
+2026-03-28 14:55:13 [DEBUG] markdown_it.rules_block.code: entering code: StateBlock(line=4,level=2,tokens=15), 4, 7, False
+2026-03-28 14:55:13 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=4,level=2,tokens=15), 4, 7, False
+2026-03-28 14:55:13 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=4,level=2,tokens=15), 4, 7, False
+2026-03-28 14:55:13 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=4,level=2,tokens=15), 4, 7, False
+2026-03-28 14:55:13 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=4,level=2,tokens=15), 4, 7, False
+2026-03-28 14:55:13 [DEBUG] markdown_it.rules_block.reference: entering reference: StateBlock(line=4,level=2,tokens=15), 4, 7, False
+2026-03-28 14:55:13 [DEBUG] markdown_it.rules_block.html_block: entering html_block: StateBlock(line=4,level=2,tokens=15), 4, 7, False
+2026-03-28 14:55:13 [DEBUG] markdown_it.rules_block.heading: entering heading: StateBlock(line=4,level=2,tokens=15), 4, 7, False
+2026-03-28 14:55:13 [DEBUG] markdown_it.rules_block.lheading: entering lheading: StateBlock(line=4,level=2,tokens=15), 4, 7, False
+2026-03-28 14:55:13 [DEBUG] markdown_it.rules_block.paragraph: entering paragraph: StateBlock(line=4,level=2,tokens=15), 4, 7, False
+2026-03-28 14:55:13 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=6,level=1,tokens=19), 6, 7, True
+2026-03-28 14:55:13 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=6,level=1,tokens=19), 6, 7, True
+2026-03-28 14:55:13 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=6,level=1,tokens=19), 6, 7, True
+2026-03-28 14:55:13 [DEBUG] markdown_it.rules_block.code: entering code: StateBlock(line=6,level=0,tokens=20), 6, 7, False
+2026-03-28 14:55:13 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=6,level=0,tokens=20), 6, 7, False
+2026-03-28 14:55:13 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=6,level=0,tokens=20), 6, 7, False
+2026-03-28 14:55:13 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=6,level=0,tokens=20), 6, 7, False
+2026-03-28 14:55:13 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=6,level=0,tokens=20), 6, 7, False
+2026-03-28 14:55:13 [DEBUG] markdown_it.rules_block.reference: entering reference: StateBlock(line=6,level=0,tokens=20), 6, 7, False
+2026-03-28 14:55:13 [DEBUG] markdown_it.rules_block.html_block: entering html_block: StateBlock(line=6,level=0,tokens=20), 6, 7, False
+2026-03-28 14:55:13 [DEBUG] markdown_it.rules_block.heading: entering heading: StateBlock(line=6,level=0,tokens=20), 6, 7, False
+2026-03-28 14:55:13 [DEBUG] markdown_it.rules_block.lheading: entering lheading: StateBlock(line=6,level=0,tokens=20), 6, 7, False
+2026-03-28 14:55:13 [DEBUG] markdown_it.rules_block.paragraph: entering paragraph: StateBlock(line=6,level=0,tokens=20), 6, 7, False
+2026-03-28 14:55:13 [DEBUG] asyncio: Using selector: EpollSelector
+2026-03-28 14:56:17 [DEBUG] ai_agent: API request #5: model=moonshotai/kimi-k2-instruct, messages=10
+2026-03-28 14:56:17 [DEBUG] urllib3.connectionpool: https://integrate.api.nvidia.com:443 "POST /v1/chat/completions HTTP/1.1" 200 746
+2026-03-28 14:56:17 [DEBUG] ai_agent: API response: {
+  "id": "chatcmpl-a1b6df1e21d239a7",
+  "object": "chat.completion",
+  "created": 1774709777,
+  "model": "moonshotai/kimi-k2-instruct",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": null,
+        "refusal": null,
+        "annotations": null,
+        "audio": null,
+        "function_call": null,
+        "tool_calls": [
+          {
+            "id": "functions.file_delete:1",
+            "type": "function",
+            "function": {
+              "name": "file_delete",
+              "arguments": "{\"path\": \"index.html\"}"
+            }
+          }
+        ],
+        "reasoning": null,
+        "reasoning_content": null
+      },
+      "logprobs": null,
+      "finish_reason": "tool_calls",
+      "stop_reason": 163586,
+      "token_ids": null
+    }
+  ],
+  "service_tier": null,
+  "system_fingerprint": null,
+  "usage": {
+    "prompt_tokens": 1417,
+    "total_tokens": 1444,
+    "completion_tokens": 27,
+    "prompt_tokens_details": n
+2026-03-28 14:56:17 [INFO] ai_agent: Tool call: file_delete({"path": "index.html"})
+2026-03-28 14:56:17 [INFO] ai_agent: Executing tool: file_delete with args: {"path": "index.html"}
+2026-03-28 14:56:17 [INFO] ai_agent: file_delete: index.html
+2026-03-28 14:56:17 [DEBUG] ai_agent: API request #6: model=moonshotai/kimi-k2-instruct, messages=12
+2026-03-28 14:56:18 [DEBUG] urllib3.connectionpool: https://integrate.api.nvidia.com:443 "POST /v1/chat/completions HTTP/1.1" 200 649
+2026-03-28 14:56:18 [DEBUG] ai_agent: API response: {
+  "id": "chatcmpl-8dac274885dce29b",
+  "object": "chat.completion",
+  "created": 1774709777,
+  "model": "moonshotai/kimi-k2-instruct",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "The index.html file has been removed.",
+        "refusal": null,
+        "annotations": null,
+        "audio": null,
+        "function_call": null,
+        "tool_calls": [],
+        "reasoning": null,
+        "reasoning_content": null
+      },
+      "logprobs": null,
+      "finish_reason": "stop",
+      "stop_reason": 163586,
+      "token_ids": null
+    }
+  ],
+  "service_tier": null,
+  "system_fingerprint": null,
+  "usage": {
+    "prompt_tokens": 1473,
+    "total_tokens": 1482,
+    "completion_tokens": 9,
+    "prompt_tokens_details": null
+  },
+  "prompt_logprobs": null,
+  "prompt_token_ids": null,
+  "kv_transfer_params": null
+}
+2026-03-28 14:56:18 [DEBUG] markdown_it.rules_block.code: entering code: StateBlock(line=0,level=0,tokens=0), 0, 1, False
+2026-03-28 14:56:18 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=0,level=0,tokens=0), 0, 1, False
+2026-03-28 14:56:18 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=0,level=0,tokens=0), 0, 1, False
+2026-03-28 14:56:18 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=0,level=0,tokens=0), 0, 1, False
+2026-03-28 14:56:18 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=0,level=0,tokens=0), 0, 1, False
+2026-03-28 14:56:18 [DEBUG] markdown_it.rules_block.reference: entering reference: StateBlock(line=0,level=0,tokens=0), 0, 1, False
+2026-03-28 14:56:18 [DEBUG] markdown_it.rules_block.html_block: entering html_block: StateBlock(line=0,level=0,tokens=0), 0, 1, False
+2026-03-28 14:56:18 [DEBUG] markdown_it.rules_block.heading: entering heading: StateBlock(line=0,level=0,tokens=0), 0, 1, False
+2026-03-28 14:56:18 [DEBUG] markdown_it.rules_block.lheading: entering lheading: StateBlock(line=0,level=0,tokens=0), 0, 1, False
+2026-03-28 14:56:18 [DEBUG] markdown_it.rules_block.paragraph: entering paragraph: StateBlock(line=0,level=0,tokens=0), 0, 1, False
+2026-03-28 14:56:18 [DEBUG] asyncio: Using selector: EpollSelector
+2026-03-28 15:36:15 [INFO] ai_agent: New session: 247f21a9
+2026-03-28 15:36:15 [DEBUG] asyncio: Using selector: EpollSelector
+2026-03-28 15:36:29 [INFO] ai_agent: Model changed to: moonshotai/kimi-k2-instruct
+2026-03-28 15:36:29 [DEBUG] asyncio: Using selector: EpollSelector
+2026-03-28 15:36:31 [DEBUG] ai_agent: API request #1: model=moonshotai/kimi-k2-instruct, messages=2
+2026-03-28 15:36:31 [DEBUG] urllib3.connectionpool: Starting new HTTPS connection (1): integrate.api.nvidia.com:443
+2026-03-28 15:36:33 [DEBUG] urllib3.connectionpool: https://integrate.api.nvidia.com:443 "POST /v1/chat/completions HTTP/1.1" 200 849
+2026-03-28 15:36:33 [DEBUG] ai_agent: API response: {
+  "id": "chatcmpl-b5f0a8e8b8a070db",
+  "object": "chat.completion",
+  "created": 1774712192,
+  "model": "moonshotai/kimi-k2-instruct",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "Hello! I'm AI Agent v1.0.0, your expert AI assistant. I'm here to help you with tasks in your terminal environment. I can execute shell commands, manage files, run Python code, and more.\n\nWhat would you like me to help you with today?",
+        "refusal": null,
+        "annotations": null,
+        "audio": null,
+        "function_call": null,
+        "tool_calls": [],
+        "reasoning": null,
+        "reasoning_content": null
+      },
+      "logprobs": null,
+      "finish_reason": "stop",
+      "stop_reason": 163586,
+      "token_ids": null
+    }
+  ],
+  "service_tier": null,
+  "system_fingerprint": null,
+  "usage": {
+    "prompt_tokens": 1021,
+    "total_tokens": 1078,
+    "completion_tokens": 57,
+    "prompt_tokens_details": null
+  },
+  "pro
+2026-03-28 15:36:33 [DEBUG] markdown_it.rules_block.code: entering code: StateBlock(line=0,level=0,tokens=0), 0, 3, False
+2026-03-28 15:36:33 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=0,level=0,tokens=0), 0, 3, False
+2026-03-28 15:36:33 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=0,level=0,tokens=0), 0, 3, False
+2026-03-28 15:36:33 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=0,level=0,tokens=0), 0, 3, False
+2026-03-28 15:36:33 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=0,level=0,tokens=0), 0, 3, False
+2026-03-28 15:36:33 [DEBUG] markdown_it.rules_block.reference: entering reference: StateBlock(line=0,level=0,tokens=0), 0, 3, False
+2026-03-28 15:36:33 [DEBUG] markdown_it.rules_block.html_block: entering html_block: StateBlock(line=0,level=0,tokens=0), 0, 3, False
+2026-03-28 15:36:33 [DEBUG] markdown_it.rules_block.heading: entering heading: StateBlock(line=0,level=0,tokens=0), 0, 3, False
+2026-03-28 15:36:33 [DEBUG] markdown_it.rules_block.lheading: entering lheading: StateBlock(line=0,level=0,tokens=0), 0, 3, False
+2026-03-28 15:36:33 [DEBUG] markdown_it.rules_block.paragraph: entering paragraph: StateBlock(line=0,level=0,tokens=0), 0, 3, False
+2026-03-28 15:36:33 [DEBUG] markdown_it.rules_block.code: entering code: StateBlock(line=2,level=0,tokens=3), 2, 3, False
+2026-03-28 15:36:33 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=2,level=0,tokens=3), 2, 3, False
+2026-03-28 15:36:33 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=2,level=0,tokens=3), 2, 3, False
+2026-03-28 15:36:33 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=2,level=0,tokens=3), 2, 3, False
+2026-03-28 15:36:33 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=2,level=0,tokens=3), 2, 3, False
+2026-03-28 15:36:33 [DEBUG] markdown_it.rules_block.reference: entering reference: StateBlock(line=2,level=0,tokens=3), 2, 3, False
+2026-03-28 15:36:33 [DEBUG] markdown_it.rules_block.html_block: entering html_block: StateBlock(line=2,level=0,tokens=3), 2, 3, False
+2026-03-28 15:36:33 [DEBUG] markdown_it.rules_block.heading: entering heading: StateBlock(line=2,level=0,tokens=3), 2, 3, False
+2026-03-28 15:36:33 [DEBUG] markdown_it.rules_block.lheading: entering lheading: StateBlock(line=2,level=0,tokens=3), 2, 3, False
+2026-03-28 15:36:33 [DEBUG] markdown_it.rules_block.paragraph: entering paragraph: StateBlock(line=2,level=0,tokens=3), 2, 3, False
+2026-03-28 15:36:33 [DEBUG] asyncio: Using selector: EpollSelector
+2026-03-28 15:36:42 [DEBUG] ai_agent: API request #2: model=moonshotai/kimi-k2-instruct, messages=4
+2026-03-28 15:36:44 [DEBUG] urllib3.connectionpool: https://integrate.api.nvidia.com:443 "POST /v1/chat/completions HTTP/1.1" 200 966
+2026-03-28 15:36:44 [DEBUG] ai_agent: API response: {
+  "id": "chatcmpl-af23190cc64d812a",
+  "object": "chat.completion",
+  "created": 1774712202,
+  "model": "moonshotai/kimi-k2-instruct",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "I'd be happy to help you create an index! Could you clarify what type of index you'd like me to create? For example:\n\n- An index.html file for a website\n- An index file for documentation\n- A table of contents/index for a project\n- An index for a database\n- Something else specific?\n\nLet me know what you have in mind, and I'll create it for you!",
+        "refusal": null,
+        "annotations": null,
+        "audio": null,
+        "function_call": null,
+        "tool_calls": [],
+        "reasoning": null,
+        "reasoning_content": null
+      },
+      "logprobs": null,
+      "finish_reason": "stop",
+      "stop_reason": 163586,
+      "token_ids": null
+    }
+  ],
+  "service_tier": null,
+  "system_fingerprint": null,
+  "usage": {
+    "promp
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.code: entering code: StateBlock(line=0,level=0,tokens=0), 0, 9, False
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=0,level=0,tokens=0), 0, 9, False
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=0,level=0,tokens=0), 0, 9, False
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=0,level=0,tokens=0), 0, 9, False
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=0,level=0,tokens=0), 0, 9, False
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.reference: entering reference: StateBlock(line=0,level=0,tokens=0), 0, 9, False
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.html_block: entering html_block: StateBlock(line=0,level=0,tokens=0), 0, 9, False
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.heading: entering heading: StateBlock(line=0,level=0,tokens=0), 0, 9, False
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.lheading: entering lheading: StateBlock(line=0,level=0,tokens=0), 0, 9, False
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.paragraph: entering paragraph: StateBlock(line=0,level=0,tokens=0), 0, 9, False
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.code: entering code: StateBlock(line=2,level=0,tokens=3), 2, 9, False
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=2,level=0,tokens=3), 2, 9, False
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=2,level=0,tokens=3), 2, 9, False
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=2,level=0,tokens=3), 2, 9, False
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=2,level=0,tokens=3), 2, 9, False
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.code: entering code: StateBlock(line=2,level=2,tokens=5), 2, 9, False
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=2,level=2,tokens=5), 2, 9, False
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=2,level=2,tokens=5), 2, 9, False
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=2,level=2,tokens=5), 2, 9, False
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=2,level=2,tokens=5), 2, 9, False
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.reference: entering reference: StateBlock(line=2,level=2,tokens=5), 2, 9, False
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.html_block: entering html_block: StateBlock(line=2,level=2,tokens=5), 2, 9, False
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.heading: entering heading: StateBlock(line=2,level=2,tokens=5), 2, 9, False
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.lheading: entering lheading: StateBlock(line=2,level=2,tokens=5), 2, 9, False
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=2,level=2,tokens=5), 3, 9, True
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=2,level=2,tokens=5), 3, 9, True
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=2,level=2,tokens=5), 3, 9, True
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=2,level=2,tokens=5), 3, 9, True
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.paragraph: entering paragraph: StateBlock(line=2,level=2,tokens=5), 2, 9, False
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=2,level=2,tokens=5), 3, 9, True
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=2,level=2,tokens=5), 3, 9, True
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=2,level=2,tokens=5), 3, 9, True
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=2,level=2,tokens=5), 3, 9, True
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=3,level=1,tokens=9), 3, 9, True
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=3,level=1,tokens=9), 3, 9, True
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=3,level=1,tokens=9), 3, 9, True
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.code: entering code: StateBlock(line=3,level=2,tokens=10), 3, 9, False
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=3,level=2,tokens=10), 3, 9, False
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=3,level=2,tokens=10), 3, 9, False
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=3,level=2,tokens=10), 3, 9, False
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=3,level=2,tokens=10), 3, 9, False
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.reference: entering reference: StateBlock(line=3,level=2,tokens=10), 3, 9, False
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.html_block: entering html_block: StateBlock(line=3,level=2,tokens=10), 3, 9, False
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.heading: entering heading: StateBlock(line=3,level=2,tokens=10), 3, 9, False
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.lheading: entering lheading: StateBlock(line=3,level=2,tokens=10), 3, 9, False
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=3,level=2,tokens=10), 4, 9, True
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=3,level=2,tokens=10), 4, 9, True
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=3,level=2,tokens=10), 4, 9, True
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=3,level=2,tokens=10), 4, 9, True
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.paragraph: entering paragraph: StateBlock(line=3,level=2,tokens=10), 3, 9, False
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=3,level=2,tokens=10), 4, 9, True
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=3,level=2,tokens=10), 4, 9, True
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=3,level=2,tokens=10), 4, 9, True
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=3,level=2,tokens=10), 4, 9, True
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=4,level=1,tokens=14), 4, 9, True
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=4,level=1,tokens=14), 4, 9, True
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=4,level=1,tokens=14), 4, 9, True
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.code: entering code: StateBlock(line=4,level=2,tokens=15), 4, 9, False
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=4,level=2,tokens=15), 4, 9, False
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=4,level=2,tokens=15), 4, 9, False
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=4,level=2,tokens=15), 4, 9, False
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=4,level=2,tokens=15), 4, 9, False
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.reference: entering reference: StateBlock(line=4,level=2,tokens=15), 4, 9, False
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.html_block: entering html_block: StateBlock(line=4,level=2,tokens=15), 4, 9, False
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.heading: entering heading: StateBlock(line=4,level=2,tokens=15), 4, 9, False
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.lheading: entering lheading: StateBlock(line=4,level=2,tokens=15), 4, 9, False
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=4,level=2,tokens=15), 5, 9, True
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=4,level=2,tokens=15), 5, 9, True
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=4,level=2,tokens=15), 5, 9, True
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=4,level=2,tokens=15), 5, 9, True
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.paragraph: entering paragraph: StateBlock(line=4,level=2,tokens=15), 4, 9, False
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=4,level=2,tokens=15), 5, 9, True
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=4,level=2,tokens=15), 5, 9, True
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=4,level=2,tokens=15), 5, 9, True
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=4,level=2,tokens=15), 5, 9, True
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=5,level=1,tokens=19), 5, 9, True
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=5,level=1,tokens=19), 5, 9, True
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=5,level=1,tokens=19), 5, 9, True
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.code: entering code: StateBlock(line=5,level=2,tokens=20), 5, 9, False
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=5,level=2,tokens=20), 5, 9, False
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=5,level=2,tokens=20), 5, 9, False
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=5,level=2,tokens=20), 5, 9, False
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=5,level=2,tokens=20), 5, 9, False
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.reference: entering reference: StateBlock(line=5,level=2,tokens=20), 5, 9, False
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.html_block: entering html_block: StateBlock(line=5,level=2,tokens=20), 5, 9, False
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.heading: entering heading: StateBlock(line=5,level=2,tokens=20), 5, 9, False
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.lheading: entering lheading: StateBlock(line=5,level=2,tokens=20), 5, 9, False
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=5,level=2,tokens=20), 6, 9, True
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=5,level=2,tokens=20), 6, 9, True
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=5,level=2,tokens=20), 6, 9, True
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=5,level=2,tokens=20), 6, 9, True
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.paragraph: entering paragraph: StateBlock(line=5,level=2,tokens=20), 5, 9, False
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=5,level=2,tokens=20), 6, 9, True
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=5,level=2,tokens=20), 6, 9, True
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=5,level=2,tokens=20), 6, 9, True
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=5,level=2,tokens=20), 6, 9, True
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=6,level=1,tokens=24), 6, 9, True
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=6,level=1,tokens=24), 6, 9, True
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=6,level=1,tokens=24), 6, 9, True
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.code: entering code: StateBlock(line=6,level=2,tokens=25), 6, 9, False
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=6,level=2,tokens=25), 6, 9, False
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=6,level=2,tokens=25), 6, 9, False
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=6,level=2,tokens=25), 6, 9, False
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=6,level=2,tokens=25), 6, 9, False
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.reference: entering reference: StateBlock(line=6,level=2,tokens=25), 6, 9, False
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.html_block: entering html_block: StateBlock(line=6,level=2,tokens=25), 6, 9, False
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.heading: entering heading: StateBlock(line=6,level=2,tokens=25), 6, 9, False
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.lheading: entering lheading: StateBlock(line=6,level=2,tokens=25), 6, 9, False
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.paragraph: entering paragraph: StateBlock(line=6,level=2,tokens=25), 6, 9, False
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=8,level=1,tokens=29), 8, 9, True
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=8,level=1,tokens=29), 8, 9, True
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=8,level=1,tokens=29), 8, 9, True
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.code: entering code: StateBlock(line=8,level=0,tokens=30), 8, 9, False
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=8,level=0,tokens=30), 8, 9, False
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=8,level=0,tokens=30), 8, 9, False
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=8,level=0,tokens=30), 8, 9, False
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=8,level=0,tokens=30), 8, 9, False
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.reference: entering reference: StateBlock(line=8,level=0,tokens=30), 8, 9, False
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.html_block: entering html_block: StateBlock(line=8,level=0,tokens=30), 8, 9, False
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.heading: entering heading: StateBlock(line=8,level=0,tokens=30), 8, 9, False
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.lheading: entering lheading: StateBlock(line=8,level=0,tokens=30), 8, 9, False
+2026-03-28 15:36:44 [DEBUG] markdown_it.rules_block.paragraph: entering paragraph: StateBlock(line=8,level=0,tokens=30), 8, 9, False
+2026-03-28 15:36:44 [DEBUG] asyncio: Using selector: EpollSelector
+2026-03-28 15:36:51 [DEBUG] ai_agent: API request #3: model=moonshotai/kimi-k2-instruct, messages=6
+2026-03-28 15:37:13 [DEBUG] urllib3.connectionpool: https://integrate.api.nvidia.com:443 "POST /v1/chat/completions HTTP/1.1" 200 4543
+2026-03-28 15:37:13 [DEBUG] ai_agent: API response: {
+  "id": "chatcmpl-9f4c448074d2ff1a",
+  "object": "chat.completion",
+  "created": 1774712212,
+  "model": "moonshotai/kimi-k2-instruct",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": null,
+        "refusal": null,
+        "annotations": null,
+        "audio": null,
+        "function_call": null,
+        "tool_calls": [
+          {
+            "id": "functions.file_write:0",
+            "type": "function",
+            "function": {
+              "name": "file_write",
+              "arguments": "{\"path\": \"index.html\", \"content\": \"<!DOCTYPE html>\\n<html lang=\\\"en\\\">\\n<head>\\n    <meta charset=\\\"UTF-8\\\">\\n    <meta name=\\\"viewport\\\" content=\\\"width=device-width, initial-scale=1.0\\\">\\n    <title>Welcome Page</title>\\n    <style>\\n        body {\\n            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;\\n            line-height: 1.6;\\n     
+2026-03-28 15:37:13 [INFO] ai_agent: Tool call: file_write({"path": "index.html", "content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title)
+2026-03-28 15:37:13 [INFO] ai_agent: Executing tool: file_write with args: {"path": "index.html", "content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title
+2026-03-28 15:37:13 [INFO] ai_agent: file_write: index.html (3458 chars)
+2026-03-28 15:37:13 [DEBUG] ai_agent: API request #4: model=moonshotai/kimi-k2-instruct, messages=8
+2026-03-28 15:37:17 [DEBUG] urllib3.connectionpool: https://integrate.api.nvidia.com:443 "POST /v1/chat/completions HTTP/1.1" 200 1220
+2026-03-28 15:37:17 [DEBUG] ai_agent: API response: {
+  "id": "chatcmpl-973e7a05d9634ed8",
+  "object": "chat.completion",
+  "created": 1774712233,
+  "model": "moonshotai/kimi-k2-instruct",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "I've created a modern, responsive `index.html` file for you! The page includes:\n\n- **Responsive design** that works on all devices\n- **Modern styling** with gradient backgrounds and smooth animations\n- **Clean layout** with a welcome section, feature cards, and call-to-action button\n- **Easy customization** - you can easily modify colors, content, and styling\n\nThe file has been saved as `index.html` in your current directory. You can open it in any web browser to see how it looks, or edit the content to match your specific needs. Would you like me to make any changes to the design or content?",
+        "refusal": null,
+        "annotations": null,
+        "audio": null,
+        "function_call": null,
+        "tool_calls": [],
+        "reas
+2026-03-28 15:37:17 [DEBUG] markdown_it.rules_block.code: entering code: StateBlock(line=0,level=0,tokens=0), 0, 8, False
+2026-03-28 15:37:17 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=0,level=0,tokens=0), 0, 8, False
+2026-03-28 15:37:17 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=0,level=0,tokens=0), 0, 8, False
+2026-03-28 15:37:17 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=0,level=0,tokens=0), 0, 8, False
+2026-03-28 15:37:17 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=0,level=0,tokens=0), 0, 8, False
+2026-03-28 15:37:17 [DEBUG] markdown_it.rules_block.reference: entering reference: StateBlock(line=0,level=0,tokens=0), 0, 8, False
+2026-03-28 15:37:17 [DEBUG] markdown_it.rules_block.html_block: entering html_block: StateBlock(line=0,level=0,tokens=0), 0, 8, False
+2026-03-28 15:37:17 [DEBUG] markdown_it.rules_block.heading: entering heading: StateBlock(line=0,level=0,tokens=0), 0, 8, False
+2026-03-28 15:37:17 [DEBUG] markdown_it.rules_block.lheading: entering lheading: StateBlock(line=0,level=0,tokens=0), 0, 8, False
+2026-03-28 15:37:17 [DEBUG] markdown_it.rules_block.paragraph: entering paragraph: StateBlock(line=0,level=0,tokens=0), 0, 8, False
+2026-03-28 15:37:17 [DEBUG] markdown_it.rules_block.code: entering code: StateBlock(line=2,level=0,tokens=3), 2, 8, False
+2026-03-28 15:37:17 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=2,level=0,tokens=3), 2, 8, False
+2026-03-28 15:37:17 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=2,level=0,tokens=3), 2, 8, False
+2026-03-28 15:37:17 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=2,level=0,tokens=3), 2, 8, False
+2026-03-28 15:37:17 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=2,level=0,tokens=3), 2, 8, False
+2026-03-28 15:37:17 [DEBUG] markdown_it.rules_block.code: entering code: StateBlock(line=2,level=2,tokens=5), 2, 8, False
+2026-03-28 15:37:17 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=2,level=2,tokens=5), 2, 8, False
+2026-03-28 15:37:17 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=2,level=2,tokens=5), 2, 8, False
+2026-03-28 15:37:17 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=2,level=2,tokens=5), 2, 8, False
+2026-03-28 15:37:17 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=2,level=2,tokens=5), 2, 8, False
+2026-03-28 15:37:17 [DEBUG] markdown_it.rules_block.reference: entering reference: StateBlock(line=2,level=2,tokens=5), 2, 8, False
+2026-03-28 15:37:17 [DEBUG] markdown_it.rules_block.html_block: entering html_block: StateBlock(line=2,level=2,tokens=5), 2, 8, False
+2026-03-28 15:37:17 [DEBUG] markdown_it.rules_block.heading: entering heading: StateBlock(line=2,level=2,tokens=5), 2, 8, False
+2026-03-28 15:37:17 [DEBUG] markdown_it.rules_block.lheading: entering lheading: StateBlock(line=2,level=2,tokens=5), 2, 8, False
+2026-03-28 15:37:17 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=2,level=2,tokens=5), 3, 8, True
+2026-03-28 15:37:17 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=2,level=2,tokens=5), 3, 8, True
+2026-03-28 15:37:17 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=2,level=2,tokens=5), 3, 8, True
+2026-03-28 15:37:17 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=2,level=2,tokens=5), 3, 8, True
+2026-03-28 15:37:17 [DEBUG] markdown_it.rules_block.paragraph: entering paragraph: StateBlock(line=2,level=2,tokens=5), 2, 8, False
+2026-03-28 15:37:17 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=2,level=2,tokens=5), 3, 8, True
+2026-03-28 15:37:17 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=2,level=2,tokens=5), 3, 8, True
+2026-03-28 15:37:17 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=2,level=2,tokens=5), 3, 8, True
+2026-03-28 15:37:17 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=2,level=2,tokens=5), 3, 8, True
+2026-03-28 15:37:17 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=3,level=1,tokens=9), 3, 8, True
+2026-03-28 15:37:17 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=3,level=1,tokens=9), 3, 8, True
+2026-03-28 15:37:17 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=3,level=1,tokens=9), 3, 8, True
+2026-03-28 15:37:17 [DEBUG] markdown_it.rules_block.code: entering code: StateBlock(line=3,level=2,tokens=10), 3, 8, False
+2026-03-28 15:37:17 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=3,level=2,tokens=10), 3, 8, False
+2026-03-28 15:37:17 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=3,level=2,tokens=10), 3, 8, False
+2026-03-28 15:37:17 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=3,level=2,tokens=10), 3, 8, False
+2026-03-28 15:37:17 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=3,level=2,tokens=10), 3, 8, False
+2026-03-28 15:37:17 [DEBUG] markdown_it.rules_block.reference: entering reference: StateBlock(line=3,level=2,tokens=10), 3, 8, False
+2026-03-28 15:37:17 [DEBUG] markdown_it.rules_block.html_block: entering html_block: StateBlock(line=3,level=2,tokens=10), 3, 8, False
+2026-03-28 15:37:17 [DEBUG] markdown_it.rules_block.heading: entering heading: StateBlock(line=3,level=2,tokens=10), 3, 8, False
+2026-03-28 15:37:17 [DEBUG] markdown_it.rules_block.lheading: entering lheading: StateBlock(line=3,level=2,tokens=10), 3, 8, False
+2026-03-28 15:37:17 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=3,level=2,tokens=10), 4, 8, True
+2026-03-28 15:37:17 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=3,level=2,tokens=10), 4, 8, True
+2026-03-28 15:37:17 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=3,level=2,tokens=10), 4, 8, True
+2026-03-28 15:37:17 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=3,level=2,tokens=10), 4, 8, True
+2026-03-28 15:37:17 [DEBUG] markdown_it.rules_block.paragraph: entering paragraph: StateBlock(line=3,level=2,tokens=10), 3, 8, False
+2026-03-28 15:37:17 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=3,level=2,tokens=10), 4, 8, True
+2026-03-28 15:37:17 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=3,level=2,tokens=10), 4, 8, True
+2026-03-28 15:37:17 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=3,level=2,tokens=10), 4, 8, True
+2026-03-28 15:37:17 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=3,level=2,tokens=10), 4, 8, True
+2026-03-28 15:37:17 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=4,level=1,tokens=14), 4, 8, True
+2026-03-28 15:37:17 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=4,level=1,tokens=14), 4, 8, True
+2026-03-28 15:37:17 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=4,level=1,tokens=14), 4, 8, True
+2026-03-28 15:37:17 [DEBUG] markdown_it.rules_block.code: entering code: StateBlock(line=4,level=2,tokens=15), 4, 8, False
+2026-03-28 15:37:17 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=4,level=2,tokens=15), 4, 8, False
+2026-03-28 15:37:17 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=4,level=2,tokens=15), 4, 8, False
+2026-03-28 15:37:17 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=4,level=2,tokens=15), 4, 8, False
+2026-03-28 15:37:17 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=4,level=2,tokens=15), 4, 8, False
+2026-03-28 15:37:17 [DEBUG] markdown_it.rules_block.reference: entering reference: StateBlock(line=4,level=2,tokens=15), 4, 8, False
+2026-03-28 15:37:17 [DEBUG] markdown_it.rules_block.html_block: entering html_block: StateBlock(line=4,level=2,tokens=15), 4, 8, False
+2026-03-28 15:37:17 [DEBUG] markdown_it.rules_block.heading: entering heading: StateBlock(line=4,level=2,tokens=15), 4, 8, False
+2026-03-28 15:37:17 [DEBUG] markdown_it.rules_block.lheading: entering lheading: StateBlock(line=4,level=2,tokens=15), 4, 8, False
+2026-03-28 15:37:17 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=4,level=2,tokens=15), 5, 8, True
+2026-03-28 15:37:17 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=4,level=2,tokens=15), 5, 8, True
+2026-03-28 15:37:17 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=4,level=2,tokens=15), 5, 8, True
+2026-03-28 15:37:17 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=4,level=2,tokens=15), 5, 8, True
+2026-03-28 15:37:17 [DEBUG] markdown_it.rules_block.paragraph: entering paragraph: StateBlock(line=4,level=2,tokens=15), 4, 8, False
+2026-03-28 15:37:17 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=4,level=2,tokens=15), 5, 8, True
+2026-03-28 15:37:17 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=4,level=2,tokens=15), 5, 8, True
+2026-03-28 15:37:17 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=4,level=2,tokens=15), 5, 8, True
+2026-03-28 15:37:17 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=4,level=2,tokens=15), 5, 8, True
+2026-03-28 15:37:17 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=5,level=1,tokens=19), 5, 8, True
+2026-03-28 15:37:17 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=5,level=1,tokens=19), 5, 8, True
+2026-03-28 15:37:17 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=5,level=1,tokens=19), 5, 8, True
+2026-03-28 15:37:17 [DEBUG] markdown_it.rules_block.code: entering code: StateBlock(line=5,level=2,tokens=20), 5, 8, False
+2026-03-28 15:37:17 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=5,level=2,tokens=20), 5, 8, False
+2026-03-28 15:37:17 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=5,level=2,tokens=20), 5, 8, False
+2026-03-28 15:37:17 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=5,level=2,tokens=20), 5, 8, False
+2026-03-28 15:37:17 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=5,level=2,tokens=20), 5, 8, False
+2026-03-28 15:37:17 [DEBUG] markdown_it.rules_block.reference: entering reference: StateBlock(line=5,level=2,tokens=20), 5, 8, False
+2026-03-28 15:37:17 [DEBUG] markdown_it.rules_block.html_block: entering html_block: StateBlock(line=5,level=2,tokens=20), 5, 8, False
+2026-03-28 15:37:17 [DEBUG] markdown_it.rules_block.heading: entering heading: StateBlock(line=5,level=2,tokens=20), 5, 8, False
+2026-03-28 15:37:17 [DEBUG] markdown_it.rules_block.lheading: entering lheading: StateBlock(line=5,level=2,tokens=20), 5, 8, False
+2026-03-28 15:37:17 [DEBUG] markdown_it.rules_block.paragraph: entering paragraph: StateBlock(line=5,level=2,tokens=20), 5, 8, False
+2026-03-28 15:37:17 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=7,level=1,tokens=24), 7, 8, True
+2026-03-28 15:37:17 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=7,level=1,tokens=24), 7, 8, True
+2026-03-28 15:37:17 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=7,level=1,tokens=24), 7, 8, True
+2026-03-28 15:37:17 [DEBUG] markdown_it.rules_block.code: entering code: StateBlock(line=7,level=0,tokens=25), 7, 8, False
+2026-03-28 15:37:17 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=7,level=0,tokens=25), 7, 8, False
+2026-03-28 15:37:17 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=7,level=0,tokens=25), 7, 8, False
+2026-03-28 15:37:17 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=7,level=0,tokens=25), 7, 8, False
+2026-03-28 15:37:17 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=7,level=0,tokens=25), 7, 8, False
+2026-03-28 15:37:17 [DEBUG] markdown_it.rules_block.reference: entering reference: StateBlock(line=7,level=0,tokens=25), 7, 8, False
+2026-03-28 15:37:17 [DEBUG] markdown_it.rules_block.html_block: entering html_block: StateBlock(line=7,level=0,tokens=25), 7, 8, False
+2026-03-28 15:37:17 [DEBUG] markdown_it.rules_block.heading: entering heading: StateBlock(line=7,level=0,tokens=25), 7, 8, False
+2026-03-28 15:37:17 [DEBUG] markdown_it.rules_block.lheading: entering lheading: StateBlock(line=7,level=0,tokens=25), 7, 8, False
+2026-03-28 15:37:17 [DEBUG] markdown_it.rules_block.paragraph: entering paragraph: StateBlock(line=7,level=0,tokens=25), 7, 8, False
+2026-03-28 15:37:17 [DEBUG] asyncio: Using selector: EpollSelector
+2026-03-28 15:37:27 [DEBUG] ai_agent: API request #5: model=moonshotai/kimi-k2-instruct, messages=10
+2026-03-28 15:37:28 [DEBUG] urllib3.connectionpool: https://integrate.api.nvidia.com:443 "POST /v1/chat/completions HTTP/1.1" 200 716
+2026-03-28 15:37:28 [DEBUG] ai_agent: API response: {
+  "id": "chatcmpl-a9dc0470967f5fe2",
+  "object": "chat.completion",
+  "created": 1774712247,
+  "model": "moonshotai/kimi-k2-instruct",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": null,
+        "refusal": null,
+        "annotations": null,
+        "audio": null,
+        "function_call": null,
+        "tool_calls": [
+          {
+            "id": "functions.list_dir:1",
+            "type": "function",
+            "function": {
+              "name": "list_dir",
+              "arguments": "{}"
+            }
+          }
+        ],
+        "reasoning": null,
+        "reasoning_content": null
+      },
+      "logprobs": null,
+      "finish_reason": "tool_calls",
+      "stop_reason": 163586,
+      "token_ids": null
+    }
+  ],
+  "service_tier": null,
+  "system_fingerprint": null,
+  "usage": {
+    "prompt_tokens": 2357,
+    "total_tokens": 2369,
+    "completion_tokens": 12,
+    "prompt_tokens_details": null
+  },
+  "prompt_logprobs": 
+2026-03-28 15:37:28 [INFO] ai_agent: Tool call: list_dir({})
+2026-03-28 15:37:28 [INFO] ai_agent: Executing tool: list_dir with args: {}
+2026-03-28 15:37:28 [INFO] ai_agent: list_dir: . (recursive=False)
+2026-03-28 15:37:28 [DEBUG] ai_agent: API request #6: model=moonshotai/kimi-k2-instruct, messages=12
+2026-03-28 15:37:32 [DEBUG] urllib3.connectionpool: https://integrate.api.nvidia.com:443 "POST /v1/chat/completions HTTP/1.1" 200 1288
+2026-03-28 15:37:32 [DEBUG] ai_agent: API response: {
+  "id": "chatcmpl-9fbcf643a1796694",
+  "object": "chat.completion",
+  "created": 1774712248,
+  "model": "moonshotai/kimi-k2-instruct",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "Here are the files and directories in your current location:\n\n- **index.html** (3.4KB) - The HTML file I just created for you\n- **main.py** (1.4KB) - Python file\n- **setup.sh** (911B) - Shell script\n- **requirements.txt** (53B) - Python dependencies\n- **payload.json** (172B) - JSON file\n- **.env** (123B) - Environment variables\n- **.prompt_history** (582B) - Command history\n- **bin/** - Directory\n- **conf/** - Directory\n- **lib/** - Directory\n- **logs/** - Directory\n- **sessions/** - Directory\n- **tools/** - Directory\n- **.aye/** - Directory\n\nYour new `index.html` file is ready to use! You can open it in a web browser to see the modern landing page.",
+        "refusal": null,
+        "annotations": null,
+        "audio": null,
+  
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.code: entering code: StateBlock(line=0,level=0,tokens=0), 0, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=0,level=0,tokens=0), 0, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=0,level=0,tokens=0), 0, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=0,level=0,tokens=0), 0, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=0,level=0,tokens=0), 0, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.reference: entering reference: StateBlock(line=0,level=0,tokens=0), 0, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.html_block: entering html_block: StateBlock(line=0,level=0,tokens=0), 0, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.heading: entering heading: StateBlock(line=0,level=0,tokens=0), 0, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.lheading: entering lheading: StateBlock(line=0,level=0,tokens=0), 0, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.paragraph: entering paragraph: StateBlock(line=0,level=0,tokens=0), 0, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.code: entering code: StateBlock(line=2,level=0,tokens=3), 2, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=2,level=0,tokens=3), 2, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=2,level=0,tokens=3), 2, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=2,level=0,tokens=3), 2, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=2,level=0,tokens=3), 2, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.code: entering code: StateBlock(line=2,level=2,tokens=5), 2, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=2,level=2,tokens=5), 2, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=2,level=2,tokens=5), 2, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=2,level=2,tokens=5), 2, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=2,level=2,tokens=5), 2, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.reference: entering reference: StateBlock(line=2,level=2,tokens=5), 2, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.html_block: entering html_block: StateBlock(line=2,level=2,tokens=5), 2, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.heading: entering heading: StateBlock(line=2,level=2,tokens=5), 2, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.lheading: entering lheading: StateBlock(line=2,level=2,tokens=5), 2, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=2,level=2,tokens=5), 3, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=2,level=2,tokens=5), 3, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=2,level=2,tokens=5), 3, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=2,level=2,tokens=5), 3, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.paragraph: entering paragraph: StateBlock(line=2,level=2,tokens=5), 2, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=2,level=2,tokens=5), 3, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=2,level=2,tokens=5), 3, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=2,level=2,tokens=5), 3, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=2,level=2,tokens=5), 3, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=3,level=1,tokens=9), 3, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=3,level=1,tokens=9), 3, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=3,level=1,tokens=9), 3, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.code: entering code: StateBlock(line=3,level=2,tokens=10), 3, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=3,level=2,tokens=10), 3, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=3,level=2,tokens=10), 3, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=3,level=2,tokens=10), 3, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=3,level=2,tokens=10), 3, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.reference: entering reference: StateBlock(line=3,level=2,tokens=10), 3, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.html_block: entering html_block: StateBlock(line=3,level=2,tokens=10), 3, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.heading: entering heading: StateBlock(line=3,level=2,tokens=10), 3, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.lheading: entering lheading: StateBlock(line=3,level=2,tokens=10), 3, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=3,level=2,tokens=10), 4, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=3,level=2,tokens=10), 4, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=3,level=2,tokens=10), 4, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=3,level=2,tokens=10), 4, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.paragraph: entering paragraph: StateBlock(line=3,level=2,tokens=10), 3, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=3,level=2,tokens=10), 4, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=3,level=2,tokens=10), 4, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=3,level=2,tokens=10), 4, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=3,level=2,tokens=10), 4, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=4,level=1,tokens=14), 4, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=4,level=1,tokens=14), 4, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=4,level=1,tokens=14), 4, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.code: entering code: StateBlock(line=4,level=2,tokens=15), 4, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=4,level=2,tokens=15), 4, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=4,level=2,tokens=15), 4, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=4,level=2,tokens=15), 4, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=4,level=2,tokens=15), 4, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.reference: entering reference: StateBlock(line=4,level=2,tokens=15), 4, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.html_block: entering html_block: StateBlock(line=4,level=2,tokens=15), 4, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.heading: entering heading: StateBlock(line=4,level=2,tokens=15), 4, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.lheading: entering lheading: StateBlock(line=4,level=2,tokens=15), 4, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=4,level=2,tokens=15), 5, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=4,level=2,tokens=15), 5, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=4,level=2,tokens=15), 5, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=4,level=2,tokens=15), 5, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.paragraph: entering paragraph: StateBlock(line=4,level=2,tokens=15), 4, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=4,level=2,tokens=15), 5, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=4,level=2,tokens=15), 5, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=4,level=2,tokens=15), 5, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=4,level=2,tokens=15), 5, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=5,level=1,tokens=19), 5, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=5,level=1,tokens=19), 5, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=5,level=1,tokens=19), 5, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.code: entering code: StateBlock(line=5,level=2,tokens=20), 5, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=5,level=2,tokens=20), 5, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=5,level=2,tokens=20), 5, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=5,level=2,tokens=20), 5, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=5,level=2,tokens=20), 5, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.reference: entering reference: StateBlock(line=5,level=2,tokens=20), 5, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.html_block: entering html_block: StateBlock(line=5,level=2,tokens=20), 5, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.heading: entering heading: StateBlock(line=5,level=2,tokens=20), 5, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.lheading: entering lheading: StateBlock(line=5,level=2,tokens=20), 5, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=5,level=2,tokens=20), 6, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=5,level=2,tokens=20), 6, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=5,level=2,tokens=20), 6, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=5,level=2,tokens=20), 6, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.paragraph: entering paragraph: StateBlock(line=5,level=2,tokens=20), 5, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=5,level=2,tokens=20), 6, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=5,level=2,tokens=20), 6, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=5,level=2,tokens=20), 6, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=5,level=2,tokens=20), 6, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=6,level=1,tokens=24), 6, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=6,level=1,tokens=24), 6, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=6,level=1,tokens=24), 6, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.code: entering code: StateBlock(line=6,level=2,tokens=25), 6, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=6,level=2,tokens=25), 6, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=6,level=2,tokens=25), 6, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=6,level=2,tokens=25), 6, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=6,level=2,tokens=25), 6, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.reference: entering reference: StateBlock(line=6,level=2,tokens=25), 6, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.html_block: entering html_block: StateBlock(line=6,level=2,tokens=25), 6, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.heading: entering heading: StateBlock(line=6,level=2,tokens=25), 6, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.lheading: entering lheading: StateBlock(line=6,level=2,tokens=25), 6, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=6,level=2,tokens=25), 7, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=6,level=2,tokens=25), 7, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=6,level=2,tokens=25), 7, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=6,level=2,tokens=25), 7, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.paragraph: entering paragraph: StateBlock(line=6,level=2,tokens=25), 6, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=6,level=2,tokens=25), 7, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=6,level=2,tokens=25), 7, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=6,level=2,tokens=25), 7, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=6,level=2,tokens=25), 7, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=7,level=1,tokens=29), 7, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=7,level=1,tokens=29), 7, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=7,level=1,tokens=29), 7, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.code: entering code: StateBlock(line=7,level=2,tokens=30), 7, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=7,level=2,tokens=30), 7, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=7,level=2,tokens=30), 7, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=7,level=2,tokens=30), 7, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=7,level=2,tokens=30), 7, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.reference: entering reference: StateBlock(line=7,level=2,tokens=30), 7, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.html_block: entering html_block: StateBlock(line=7,level=2,tokens=30), 7, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.heading: entering heading: StateBlock(line=7,level=2,tokens=30), 7, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.lheading: entering lheading: StateBlock(line=7,level=2,tokens=30), 7, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=7,level=2,tokens=30), 8, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=7,level=2,tokens=30), 8, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=7,level=2,tokens=30), 8, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=7,level=2,tokens=30), 8, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.paragraph: entering paragraph: StateBlock(line=7,level=2,tokens=30), 7, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=7,level=2,tokens=30), 8, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=7,level=2,tokens=30), 8, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=7,level=2,tokens=30), 8, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=7,level=2,tokens=30), 8, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=8,level=1,tokens=34), 8, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=8,level=1,tokens=34), 8, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=8,level=1,tokens=34), 8, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.code: entering code: StateBlock(line=8,level=2,tokens=35), 8, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=8,level=2,tokens=35), 8, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=8,level=2,tokens=35), 8, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=8,level=2,tokens=35), 8, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=8,level=2,tokens=35), 8, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.reference: entering reference: StateBlock(line=8,level=2,tokens=35), 8, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.html_block: entering html_block: StateBlock(line=8,level=2,tokens=35), 8, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.heading: entering heading: StateBlock(line=8,level=2,tokens=35), 8, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.lheading: entering lheading: StateBlock(line=8,level=2,tokens=35), 8, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=8,level=2,tokens=35), 9, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=8,level=2,tokens=35), 9, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=8,level=2,tokens=35), 9, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=8,level=2,tokens=35), 9, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.paragraph: entering paragraph: StateBlock(line=8,level=2,tokens=35), 8, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=8,level=2,tokens=35), 9, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=8,level=2,tokens=35), 9, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=8,level=2,tokens=35), 9, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=8,level=2,tokens=35), 9, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=9,level=1,tokens=39), 9, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=9,level=1,tokens=39), 9, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=9,level=1,tokens=39), 9, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.code: entering code: StateBlock(line=9,level=2,tokens=40), 9, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=9,level=2,tokens=40), 9, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=9,level=2,tokens=40), 9, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=9,level=2,tokens=40), 9, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=9,level=2,tokens=40), 9, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.reference: entering reference: StateBlock(line=9,level=2,tokens=40), 9, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.html_block: entering html_block: StateBlock(line=9,level=2,tokens=40), 9, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.heading: entering heading: StateBlock(line=9,level=2,tokens=40), 9, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.lheading: entering lheading: StateBlock(line=9,level=2,tokens=40), 9, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=9,level=2,tokens=40), 10, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=9,level=2,tokens=40), 10, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=9,level=2,tokens=40), 10, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=9,level=2,tokens=40), 10, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.paragraph: entering paragraph: StateBlock(line=9,level=2,tokens=40), 9, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=9,level=2,tokens=40), 10, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=9,level=2,tokens=40), 10, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=9,level=2,tokens=40), 10, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=9,level=2,tokens=40), 10, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=10,level=1,tokens=44), 10, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=10,level=1,tokens=44), 10, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=10,level=1,tokens=44), 10, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.code: entering code: StateBlock(line=10,level=2,tokens=45), 10, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=10,level=2,tokens=45), 10, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=10,level=2,tokens=45), 10, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=10,level=2,tokens=45), 10, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=10,level=2,tokens=45), 10, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.reference: entering reference: StateBlock(line=10,level=2,tokens=45), 10, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.html_block: entering html_block: StateBlock(line=10,level=2,tokens=45), 10, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.heading: entering heading: StateBlock(line=10,level=2,tokens=45), 10, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.lheading: entering lheading: StateBlock(line=10,level=2,tokens=45), 10, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=10,level=2,tokens=45), 11, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=10,level=2,tokens=45), 11, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=10,level=2,tokens=45), 11, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=10,level=2,tokens=45), 11, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.paragraph: entering paragraph: StateBlock(line=10,level=2,tokens=45), 10, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=10,level=2,tokens=45), 11, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=10,level=2,tokens=45), 11, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=10,level=2,tokens=45), 11, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=10,level=2,tokens=45), 11, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=11,level=1,tokens=49), 11, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=11,level=1,tokens=49), 11, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=11,level=1,tokens=49), 11, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.code: entering code: StateBlock(line=11,level=2,tokens=50), 11, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=11,level=2,tokens=50), 11, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=11,level=2,tokens=50), 11, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=11,level=2,tokens=50), 11, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=11,level=2,tokens=50), 11, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.reference: entering reference: StateBlock(line=11,level=2,tokens=50), 11, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.html_block: entering html_block: StateBlock(line=11,level=2,tokens=50), 11, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.heading: entering heading: StateBlock(line=11,level=2,tokens=50), 11, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.lheading: entering lheading: StateBlock(line=11,level=2,tokens=50), 11, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=11,level=2,tokens=50), 12, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=11,level=2,tokens=50), 12, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=11,level=2,tokens=50), 12, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=11,level=2,tokens=50), 12, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.paragraph: entering paragraph: StateBlock(line=11,level=2,tokens=50), 11, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=11,level=2,tokens=50), 12, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=11,level=2,tokens=50), 12, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=11,level=2,tokens=50), 12, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=11,level=2,tokens=50), 12, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=12,level=1,tokens=54), 12, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=12,level=1,tokens=54), 12, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=12,level=1,tokens=54), 12, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.code: entering code: StateBlock(line=12,level=2,tokens=55), 12, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=12,level=2,tokens=55), 12, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=12,level=2,tokens=55), 12, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=12,level=2,tokens=55), 12, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=12,level=2,tokens=55), 12, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.reference: entering reference: StateBlock(line=12,level=2,tokens=55), 12, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.html_block: entering html_block: StateBlock(line=12,level=2,tokens=55), 12, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.heading: entering heading: StateBlock(line=12,level=2,tokens=55), 12, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.lheading: entering lheading: StateBlock(line=12,level=2,tokens=55), 12, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=12,level=2,tokens=55), 13, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=12,level=2,tokens=55), 13, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=12,level=2,tokens=55), 13, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=12,level=2,tokens=55), 13, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.paragraph: entering paragraph: StateBlock(line=12,level=2,tokens=55), 12, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=12,level=2,tokens=55), 13, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=12,level=2,tokens=55), 13, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=12,level=2,tokens=55), 13, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=12,level=2,tokens=55), 13, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=13,level=1,tokens=59), 13, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=13,level=1,tokens=59), 13, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=13,level=1,tokens=59), 13, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.code: entering code: StateBlock(line=13,level=2,tokens=60), 13, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=13,level=2,tokens=60), 13, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=13,level=2,tokens=60), 13, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=13,level=2,tokens=60), 13, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=13,level=2,tokens=60), 13, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.reference: entering reference: StateBlock(line=13,level=2,tokens=60), 13, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.html_block: entering html_block: StateBlock(line=13,level=2,tokens=60), 13, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.heading: entering heading: StateBlock(line=13,level=2,tokens=60), 13, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.lheading: entering lheading: StateBlock(line=13,level=2,tokens=60), 13, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=13,level=2,tokens=60), 14, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=13,level=2,tokens=60), 14, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=13,level=2,tokens=60), 14, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=13,level=2,tokens=60), 14, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.paragraph: entering paragraph: StateBlock(line=13,level=2,tokens=60), 13, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=13,level=2,tokens=60), 14, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=13,level=2,tokens=60), 14, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=13,level=2,tokens=60), 14, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=13,level=2,tokens=60), 14, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=14,level=1,tokens=64), 14, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=14,level=1,tokens=64), 14, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=14,level=1,tokens=64), 14, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.code: entering code: StateBlock(line=14,level=2,tokens=65), 14, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=14,level=2,tokens=65), 14, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=14,level=2,tokens=65), 14, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=14,level=2,tokens=65), 14, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=14,level=2,tokens=65), 14, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.reference: entering reference: StateBlock(line=14,level=2,tokens=65), 14, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.html_block: entering html_block: StateBlock(line=14,level=2,tokens=65), 14, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.heading: entering heading: StateBlock(line=14,level=2,tokens=65), 14, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.lheading: entering lheading: StateBlock(line=14,level=2,tokens=65), 14, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=14,level=2,tokens=65), 15, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=14,level=2,tokens=65), 15, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=14,level=2,tokens=65), 15, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=14,level=2,tokens=65), 15, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.paragraph: entering paragraph: StateBlock(line=14,level=2,tokens=65), 14, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=14,level=2,tokens=65), 15, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=14,level=2,tokens=65), 15, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=14,level=2,tokens=65), 15, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=14,level=2,tokens=65), 15, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=15,level=1,tokens=69), 15, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=15,level=1,tokens=69), 15, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=15,level=1,tokens=69), 15, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.code: entering code: StateBlock(line=15,level=2,tokens=70), 15, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=15,level=2,tokens=70), 15, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=15,level=2,tokens=70), 15, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=15,level=2,tokens=70), 15, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=15,level=2,tokens=70), 15, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.reference: entering reference: StateBlock(line=15,level=2,tokens=70), 15, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.html_block: entering html_block: StateBlock(line=15,level=2,tokens=70), 15, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.heading: entering heading: StateBlock(line=15,level=2,tokens=70), 15, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.lheading: entering lheading: StateBlock(line=15,level=2,tokens=70), 15, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.paragraph: entering paragraph: StateBlock(line=15,level=2,tokens=70), 15, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=17,level=1,tokens=74), 17, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=17,level=1,tokens=74), 17, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=17,level=1,tokens=74), 17, 18, True
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.code: entering code: StateBlock(line=17,level=0,tokens=75), 17, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=17,level=0,tokens=75), 17, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=17,level=0,tokens=75), 17, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=17,level=0,tokens=75), 17, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=17,level=0,tokens=75), 17, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.reference: entering reference: StateBlock(line=17,level=0,tokens=75), 17, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.html_block: entering html_block: StateBlock(line=17,level=0,tokens=75), 17, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.heading: entering heading: StateBlock(line=17,level=0,tokens=75), 17, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.lheading: entering lheading: StateBlock(line=17,level=0,tokens=75), 17, 18, False
+2026-03-28 15:37:32 [DEBUG] markdown_it.rules_block.paragraph: entering paragraph: StateBlock(line=17,level=0,tokens=75), 17, 18, False
+2026-03-28 15:37:32 [DEBUG] asyncio: Using selector: EpollSelector
+2026-03-28 15:37:42 [DEBUG] ai_agent: API request #7: model=moonshotai/kimi-k2-instruct, messages=14
+2026-03-28 15:37:43 [DEBUG] urllib3.connectionpool: https://integrate.api.nvidia.com:443 "POST /v1/chat/completions HTTP/1.1" 200 746
+2026-03-28 15:37:43 [DEBUG] ai_agent: API response: {
+  "id": "chatcmpl-a6aba1d1e4a1cf60",
+  "object": "chat.completion",
+  "created": 1774712262,
+  "model": "moonshotai/kimi-k2-instruct",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": null,
+        "refusal": null,
+        "annotations": null,
+        "audio": null,
+        "function_call": null,
+        "tool_calls": [
+          {
+            "id": "functions.file_delete:2",
+            "type": "function",
+            "function": {
+              "name": "file_delete",
+              "arguments": "{\"path\": \"index.html\"}"
+            }
+          }
+        ],
+        "reasoning": null,
+        "reasoning_content": null
+      },
+      "logprobs": null,
+      "finish_reason": "tool_calls",
+      "stop_reason": 163586,
+      "token_ids": null
+    }
+  ],
+  "service_tier": null,
+  "system_fingerprint": null,
+  "usage": {
+    "prompt_tokens": 2720,
+    "total_tokens": 2749,
+    "completion_tokens": 29,
+    "prompt_tokens_details": n
+2026-03-28 15:37:43 [INFO] ai_agent: Tool call: file_delete({"path": "index.html"})
+2026-03-28 15:37:43 [INFO] ai_agent: Executing tool: file_delete with args: {"path": "index.html"}
+2026-03-28 15:37:43 [INFO] ai_agent: file_delete: index.html
+2026-03-28 15:37:43 [DEBUG] ai_agent: API request #8: model=moonshotai/kimi-k2-instruct, messages=16
+2026-03-28 15:37:45 [DEBUG] urllib3.connectionpool: https://integrate.api.nvidia.com:443 "POST /v1/chat/completions HTTP/1.1" 200 661
+2026-03-28 15:37:45 [DEBUG] ai_agent: API response: {
+  "id": "chatcmpl-bed88a82a460242b",
+  "object": "chat.completion",
+  "created": 1774712264,
+  "model": "moonshotai/kimi-k2-instruct",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "I've deleted the `index.html` file as requested.",
+        "refusal": null,
+        "annotations": null,
+        "audio": null,
+        "function_call": null,
+        "tool_calls": [],
+        "reasoning": null,
+        "reasoning_content": null
+      },
+      "logprobs": null,
+      "finish_reason": "stop",
+      "stop_reason": 163586,
+      "token_ids": null
+    }
+  ],
+  "service_tier": null,
+  "system_fingerprint": null,
+  "usage": {
+    "prompt_tokens": 2776,
+    "total_tokens": 2788,
+    "completion_tokens": 12,
+    "prompt_tokens_details": null
+  },
+  "prompt_logprobs": null,
+  "prompt_token_ids": null,
+  "kv_transfer_params": null
+}
+2026-03-28 15:37:45 [DEBUG] markdown_it.rules_block.code: entering code: StateBlock(line=0,level=0,tokens=0), 0, 1, False
+2026-03-28 15:37:45 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=0,level=0,tokens=0), 0, 1, False
+2026-03-28 15:37:45 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=0,level=0,tokens=0), 0, 1, False
+2026-03-28 15:37:45 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=0,level=0,tokens=0), 0, 1, False
+2026-03-28 15:37:45 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=0,level=0,tokens=0), 0, 1, False
+2026-03-28 15:37:45 [DEBUG] markdown_it.rules_block.reference: entering reference: StateBlock(line=0,level=0,tokens=0), 0, 1, False
+2026-03-28 15:37:45 [DEBUG] markdown_it.rules_block.html_block: entering html_block: StateBlock(line=0,level=0,tokens=0), 0, 1, False
+2026-03-28 15:37:45 [DEBUG] markdown_it.rules_block.heading: entering heading: StateBlock(line=0,level=0,tokens=0), 0, 1, False
+2026-03-28 15:37:45 [DEBUG] markdown_it.rules_block.lheading: entering lheading: StateBlock(line=0,level=0,tokens=0), 0, 1, False
+2026-03-28 15:37:45 [DEBUG] markdown_it.rules_block.paragraph: entering paragraph: StateBlock(line=0,level=0,tokens=0), 0, 1, False
+2026-03-28 15:37:45 [DEBUG] asyncio: Using selector: EpollSelector
+2026-03-28 15:39:27 [DEBUG] asyncio: Using selector: EpollSelector
+2026-03-28 15:39:33 [INFO] ai_agent: Session saved: /root/ai/sessions/247f21a9.json
+2026-03-28 15:54:21 [INFO] ai_agent: New session: 7293a619
+2026-03-28 15:54:21 [DEBUG] asyncio: Using selector: EpollSelector
+2026-03-28 15:54:32 [INFO] ai_agent: Model changed to: moonshotai/kimi-k2-instruct
+2026-03-28 15:54:32 [DEBUG] asyncio: Using selector: EpollSelector
+2026-03-28 15:54:35 [DEBUG] ai_agent: Stream request #1: model=moonshotai/kimi-k2-instruct, messages=2
+2026-03-28 15:54:35 [DEBUG] urllib3.connectionpool: Starting new HTTPS connection (1): integrate.api.nvidia.com:443
+2026-03-28 15:54:35 [DEBUG] urllib3.connectionpool: https://integrate.api.nvidia.com:443 "POST /v1/chat/completions HTTP/1.1" 200 None
+2026-03-28 15:54:36 [ERROR] ai_agent: Stream unexpected error: list index out of range
+Traceback (most recent call last):
+  File "/root/ai/lib/api.py", line 317, in chat_stream
+    delta = chunk.get('choices', [{}])[0].get('delta', {})
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+2026-03-28 15:54:36 [DEBUG] asyncio: Using selector: EpollSelector
+2026-03-29 03:13:20 [INFO] ai_agent: New session: 0704f206
+2026-03-29 03:13:20 [DEBUG] asyncio: Using selector: EpollSelector
+2026-03-29 03:13:32 [INFO] ai_agent: Model changed to: moonshotai/kimi-k2-instruct
+2026-03-29 03:13:32 [DEBUG] asyncio: Using selector: EpollSelector
+2026-03-29 03:13:34 [DEBUG] ai_agent: Stream request #1: model=moonshotai/kimi-k2-instruct, messages=2
+2026-03-29 03:13:34 [DEBUG] urllib3.connectionpool: Starting new HTTPS connection (1): integrate.api.nvidia.com:443
+2026-03-29 03:13:34 [DEBUG] urllib3.connectionpool: https://integrate.api.nvidia.com:443 "POST /v1/chat/completions HTTP/1.1" 200 None
+2026-03-29 03:13:36 [ERROR] ai_agent: Stream unexpected error: list index out of range
+Traceback (most recent call last):
+  File "/root/ai/lib/api.py", line 317, in chat_stream
+    delta = chunk.get('choices', [{}])[0].get('delta', {})
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+2026-03-29 03:13:36 [DEBUG] asyncio: Using selector: EpollSelector
+2026-03-29 03:13:41 [DEBUG] ai_agent: Stream request #2: model=moonshotai/kimi-k2-instruct, messages=3
+2026-03-29 03:13:41 [DEBUG] urllib3.connectionpool: Resetting dropped connection: integrate.api.nvidia.com
+2026-03-29 03:13:42 [DEBUG] urllib3.connectionpool: https://integrate.api.nvidia.com:443 "POST /v1/chat/completions HTTP/1.1" 200 None
+2026-03-29 03:13:42 [ERROR] ai_agent: Stream unexpected error: list index out of range
+Traceback (most recent call last):
+  File "/root/ai/lib/api.py", line 317, in chat_stream
+    delta = chunk.get('choices', [{}])[0].get('delta', {})
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+2026-03-29 03:13:42 [DEBUG] asyncio: Using selector: EpollSelector
+2026-03-29 03:13:46 [INFO] ai_agent: Session saved: /root/ai/sessions/0704f206.json

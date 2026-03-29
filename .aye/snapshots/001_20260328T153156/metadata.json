@@ -1,0 +1,50 @@
+{
+  "timestamp": "20260328T153156",
+  "files": [
+    {
+      "original": "/root/block_parser.py",
+      "snapshot": "/root/.aye/snapshots/001_20260328T153156/block_parser.py"
+    },
+    {
+      "original": "/root/block_renderer.py",
+      "snapshot": "/root/.aye/snapshots/001_20260328T153156/block_renderer.py"
+    },
+    {
+      "original": "/root/message_display.py",
+      "snapshot": "/root/.aye/snapshots/001_20260328T153156/message_display.py"
+    },
+    {
+      "original": "/root/app.py",
+      "snapshot": "/root/.aye/snapshots/001_20260328T153156/app.py"
+    },
+    {
+      "original": "/root/styles.tcss",
+      "snapshot": "/root/.aye/snapshots/001_20260328T153156/styles.tcss"
+    },
+    {
+      "original": "/root/chat_manager.py",
+      "snapshot": "/root/.aye/snapshots/001_20260328T153156/chat_manager.py"
+    },
+    {
+      "original": "/root/model_selector.py",
+      "snapshot": "/root/.aye/snapshots/001_20260328T153156/model_selector.py"
+    },
+    {
+      "original": "/root/settings.py",
+      "snapshot": "/root/.aye/snapshots/001_20260328T153156/settings.py"
+    },
+    {
+      "original": "/root/config.py",
+      "snapshot": "/root/.aye/snapshots/001_20260328T153156/config.py"
+    },
+    {
+      "original": "/root/__init__.py",
+      "snapshot": "/root/.aye/snapshots/001_20260328T153156/__init__.py"
+    },
+    {
+      "original": "/root/__main__.py",
+      "snapshot": "/root/.aye/snapshots/001_20260328T153156/__main__.py"
+    }
+  ],
+  "prompt": "lets continue lets continue,, wihout ruining te tui , can toulets continue, without ruining thae tui , can you you dd repnsive to all resizing terminalsize oo ? may be full cli terminal thyingy plus ad tool call and patchcall at output thing emable streaming - for patch and tol rsse in output , use this as only refrence - PATCH block format AI response \u2014 PATCH block [PATCH] filepath: src/auth/login.py line_start: 42 line_end: 45 new_content: if not check_password_hash(user.password_hash, password): return {\"error\": \"Invalid credentials\"}, 401 session[\"user_id\"] = user.id return {\"token\": generate_token(user)}, 200 [/PATCH] How it renders Terminal \u2014 patch diff display \ud83e\ude79 patch applied  \u22124  +4 \u250c\u2500 src/auth/login.py  lines 42+ \u2502  \u2212  if user.password == password: \u2502  \u2212      raise ValueError(\"Invalid\") \u2502  \u2212  session[\"uid\"] = user.id \u2502  \u2212  return True \u2502  +  if not check_password_hash(user.password_hash, password): \u2502  +      return {\"error\": \"Invalid credentials\"}, 401 \u2502  +  session[\"user_id\"] = user.id \u2502  +  return {\"token\": generate_token(user)}, 200 \u2514\u2500"
+}

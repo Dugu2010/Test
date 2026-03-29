@@ -1,0 +1,5 @@
+API_ENDPOINT = 'https://integrate.api.nvidia.com/v1/chat/completions'
+PAYLOAD_FILE = '/root/ai/payload.json'
+TOOL_DIR = '/root/ai/tools'
+LIB_DIR = '/root/ai/lib'
+LOG_FILE = '/root/ai/logs/ai.log'

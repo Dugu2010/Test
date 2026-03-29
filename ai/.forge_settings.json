@@ -1,0 +1,10 @@
+{
+  "model": "moonshotai/kimi-k2-instruct",
+  "auto_model": true,
+  "temperature": 0.2,
+  "max_tokens": 4096,
+  "top_p": 0.9,
+  "system_prompt": "",
+  "theme": "dark",
+  "api_key": "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"
+}

@@ -1,0 +1,22 @@
+{
+  "timestamp": "20260329T080007",
+  "files": [
+    {
+      "original": "/root/ai/main.py",
+      "snapshot": "/root/ai/.aye/snapshots/011_20260329T080007/main.py"
+    },
+    {
+      "original": "/root/ai/lib/web_server.py",
+      "snapshot": "/root/ai/.aye/snapshots/011_20260329T080007/web_server.py"
+    },
+    {
+      "original": "/root/ai/lib/tui.py",
+      "snapshot": "/root/ai/.aye/snapshots/011_20260329T080007/tui.py"
+    },
+    {
+      "original": "/root/ai/web/index.html",
+      "snapshot": "/root/ai/.aye/snapshots/011_20260329T080007/index.html"
+    }
+  ],
+  "prompt": "do make it save api settings and model settings"
+}

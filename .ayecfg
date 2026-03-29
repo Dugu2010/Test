@@ -1,0 +1,4 @@
+[default]
+selected_model=anthropic/claude-opus-4.6
+telemetry_opt_in=off
+token=aye_demo_42b055bc23

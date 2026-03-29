@@ -1,0 +1,169 @@
+2026-03-29 06:34:41 [INFO] forgecli: New ForgeCLI session: 10b31112
+2026-03-29 06:34:41 [DEBUG] asyncio: Using selector: EpollSelector
+2026-03-29 06:34:45 [DEBUG] forgecli: Stream request #1: model=moonshotai/kimi-k2-instruct, messages=2
+2026-03-29 06:34:45 [DEBUG] urllib3.connectionpool: Starting new HTTPS connection (1): integrate.api.nvidia.com:443
+2026-03-29 06:35:17 [INFO] forgecli: New ForgeCLI session: 996d43e9
+2026-03-29 06:35:17 [DEBUG] asyncio: Using selector: EpollSelector
+2026-03-29 06:35:20 [DEBUG] asyncio: Using selector: EpollSelector
+2026-03-29 06:36:46 [DEBUG] asyncio: Using selector: EpollSelector
+2026-03-29 06:49:28 [DEBUG] asyncio: Using selector: EpollSelector
+2026-03-29 06:49:38 [DEBUG] asyncio: Using selector: EpollSelector
+2026-03-29 06:49:42 [INFO] forgecli: New ForgeCLI session: 5d6e77cb
+2026-03-29 06:49:42 [DEBUG] asyncio: Using selector: EpollSelector
+2026-03-29 06:50:31 [DEBUG] asyncio: Using selector: EpollSelector
+2026-03-29 06:50:33 [DEBUG] forgecli: Stream request #1: model=moonshotai/kimi-k2-instruct, messages=2
+2026-03-29 06:50:33 [DEBUG] urllib3.connectionpool: Starting new HTTPS connection (1): integrate.api.nvidia.com:443
+2026-03-29 06:52:33 [WARNING] forgecli: Stream timeout. Retry 1/5
+2026-03-29 06:52:34 [DEBUG] forgecli: Stream request #2: model=moonshotai/kimi-k2-instruct, messages=2
+2026-03-29 06:52:34 [DEBUG] urllib3.connectionpool: Starting new HTTPS connection (2): integrate.api.nvidia.com:443
+2026-03-29 06:53:52 [DEBUG] urllib3.connectionpool: https://integrate.api.nvidia.com:443 "POST /v1/chat/completions HTTP/1.1" 200 None
+2026-03-29 06:53:54 [DEBUG] markdown_it.rules_block.code: entering code: StateBlock(line=0,level=0,tokens=0), 0, 1, False
+2026-03-29 06:53:54 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=0,level=0,tokens=0), 0, 1, False
+2026-03-29 06:53:54 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=0,level=0,tokens=0), 0, 1, False
+2026-03-29 06:53:54 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=0,level=0,tokens=0), 0, 1, False
+2026-03-29 06:53:54 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=0,level=0,tokens=0), 0, 1, False
+2026-03-29 06:53:54 [DEBUG] markdown_it.rules_block.reference: entering reference: StateBlock(line=0,level=0,tokens=0), 0, 1, False
+2026-03-29 06:53:54 [DEBUG] markdown_it.rules_block.html_block: entering html_block: StateBlock(line=0,level=0,tokens=0), 0, 1, False
+2026-03-29 06:53:54 [DEBUG] markdown_it.rules_block.heading: entering heading: StateBlock(line=0,level=0,tokens=0), 0, 1, False
+2026-03-29 06:53:54 [DEBUG] markdown_it.rules_block.lheading: entering lheading: StateBlock(line=0,level=0,tokens=0), 0, 1, False
+2026-03-29 06:53:54 [DEBUG] markdown_it.rules_block.paragraph: entering paragraph: StateBlock(line=0,level=0,tokens=0), 0, 1, False
+2026-03-29 06:53:54 [DEBUG] asyncio: Using selector: EpollSelector
+2026-03-29 06:53:54 [DEBUG] asyncio: Using selector: EpollSelector
+2026-03-29 06:57:58 [DEBUG] asyncio: Using selector: EpollSelector
+2026-03-29 06:58:20 [INFO] forgecli: Model changed to: qwen/qwen3-coder-480b-a35b-instruct
+2026-03-29 06:58:20 [DEBUG] asyncio: Using selector: EpollSelector
+2026-03-29 06:58:22 [DEBUG] forgecli: Stream request #3: model=qwen/qwen3-coder-480b-a35b-instruct, messages=4
+2026-03-29 06:58:22 [DEBUG] urllib3.connectionpool: Resetting dropped connection: integrate.api.nvidia.com
+2026-03-29 06:58:22 [DEBUG] urllib3.connectionpool: https://integrate.api.nvidia.com:443 "POST /v1/chat/completions HTTP/1.1" 200 None
+2026-03-29 06:58:23 [ERROR] forgecli: Stream unexpected error: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/root/ai/lib/api.py", line 344, in chat_stream
+    for tc in delta['tool_calls']:
+TypeError: 'NoneType' object is not iterable
+2026-03-29 06:58:23 [DEBUG] asyncio: Using selector: EpollSelector
+2026-03-29 06:58:25 [DEBUG] asyncio: Using selector: EpollSelector
+2026-03-29 07:19:14 [INFO] forgecli: Session saved: /root/ai/sessions/5d6e77cb.json
+2026-03-29 07:19:18 [INFO] forgecli: New ForgeCLI session: f1259308
+2026-03-29 07:19:18 [DEBUG] asyncio: Using selector: EpollSelector
+2026-03-29 07:19:21 [DEBUG] forgecli: Stream request #1: model=moonshotai/kimi-k2-instruct, messages=2
+2026-03-29 07:19:21 [DEBUG] urllib3.connectionpool: Starting new HTTPS connection (1): integrate.api.nvidia.com:443
+2026-03-29 07:19:22 [DEBUG] urllib3.connectionpool: https://integrate.api.nvidia.com:443 "POST /v1/chat/completions HTTP/1.1" 200 None
+2026-03-29 07:19:23 [DEBUG] markdown_it.rules_block.code: entering code: StateBlock(line=0,level=0,tokens=0), 0, 1, False
+2026-03-29 07:19:23 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=0,level=0,tokens=0), 0, 1, False
+2026-03-29 07:19:23 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=0,level=0,tokens=0), 0, 1, False
+2026-03-29 07:19:23 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=0,level=0,tokens=0), 0, 1, False
+2026-03-29 07:19:23 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=0,level=0,tokens=0), 0, 1, False
+2026-03-29 07:19:23 [DEBUG] markdown_it.rules_block.reference: entering reference: StateBlock(line=0,level=0,tokens=0), 0, 1, False
+2026-03-29 07:19:23 [DEBUG] markdown_it.rules_block.html_block: entering html_block: StateBlock(line=0,level=0,tokens=0), 0, 1, False
+2026-03-29 07:19:23 [DEBUG] markdown_it.rules_block.heading: entering heading: StateBlock(line=0,level=0,tokens=0), 0, 1, False
+2026-03-29 07:19:23 [DEBUG] markdown_it.rules_block.lheading: entering lheading: StateBlock(line=0,level=0,tokens=0), 0, 1, False
+2026-03-29 07:19:23 [DEBUG] markdown_it.rules_block.paragraph: entering paragraph: StateBlock(line=0,level=0,tokens=0), 0, 1, False
+2026-03-29 07:19:23 [DEBUG] asyncio: Using selector: EpollSelector
+2026-03-29 07:19:30 [INFO] forgecli: Model changed to: qwen/qwen3-coder-480b-a35b-instruct
+2026-03-29 07:19:30 [DEBUG] asyncio: Using selector: EpollSelector
+2026-03-29 07:19:31 [DEBUG] forgecli: Stream request #2: model=qwen/qwen3-coder-480b-a35b-instruct, messages=4
+2026-03-29 07:19:31 [DEBUG] urllib3.connectionpool: Resetting dropped connection: integrate.api.nvidia.com
+2026-03-29 07:19:31 [DEBUG] urllib3.connectionpool: https://integrate.api.nvidia.com:443 "POST /v1/chat/completions HTTP/1.1" 200 None
+2026-03-29 07:19:32 [ERROR] forgecli: Stream unexpected error: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/root/ai/lib/api.py", line 344, in chat_stream
+    for tc in delta['tool_calls']:
+TypeError: 'NoneType' object is not iterable
+2026-03-29 07:19:32 [DEBUG] asyncio: Using selector: EpollSelector
+2026-03-29 07:32:45 [DEBUG] asyncio: Using selector: EpollSelector
+2026-03-29 07:32:56 [INFO] forgecli: Session saved: /root/ai/sessions/f1259308.json
+2026-03-29 07:33:15 [INFO] forgecli: New ForgeCLI session: 6070bda1
+2026-03-29 07:33:15 [DEBUG] asyncio: Using selector: EpollSelector
+2026-03-29 07:33:21 [DEBUG] forgecli: Stream request #1: model=moonshotai/kimi-k2-instruct, messages=2
+2026-03-29 07:33:21 [DEBUG] urllib3.connectionpool: Starting new HTTPS connection (1): integrate.api.nvidia.com:443
+2026-03-29 07:33:23 [DEBUG] urllib3.connectionpool: https://integrate.api.nvidia.com:443 "POST /v1/chat/completions HTTP/1.1" 200 None
+2026-03-29 07:33:25 [DEBUG] forgecli: Stream ended: 7 chunks, 0 tool_calls
+2026-03-29 07:33:25 [DEBUG] markdown_it.rules_block.code: entering code: StateBlock(line=0,level=0,tokens=0), 0, 1, False
+2026-03-29 07:33:25 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=0,level=0,tokens=0), 0, 1, False
+2026-03-29 07:33:25 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=0,level=0,tokens=0), 0, 1, False
+2026-03-29 07:33:25 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=0,level=0,tokens=0), 0, 1, False
+2026-03-29 07:33:25 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=0,level=0,tokens=0), 0, 1, False
+2026-03-29 07:33:25 [DEBUG] markdown_it.rules_block.reference: entering reference: StateBlock(line=0,level=0,tokens=0), 0, 1, False
+2026-03-29 07:33:25 [DEBUG] markdown_it.rules_block.html_block: entering html_block: StateBlock(line=0,level=0,tokens=0), 0, 1, False
+2026-03-29 07:33:25 [DEBUG] markdown_it.rules_block.heading: entering heading: StateBlock(line=0,level=0,tokens=0), 0, 1, False
+2026-03-29 07:33:25 [DEBUG] markdown_it.rules_block.lheading: entering lheading: StateBlock(line=0,level=0,tokens=0), 0, 1, False
+2026-03-29 07:33:25 [DEBUG] markdown_it.rules_block.paragraph: entering paragraph: StateBlock(line=0,level=0,tokens=0), 0, 1, False
+2026-03-29 07:33:25 [DEBUG] asyncio: Using selector: EpollSelector
+2026-03-29 07:36:55 [INFO] forgecli: Session saved: /root/ai/sessions/6070bda1.json
+2026-03-29 07:37:02 [INFO] forgecli: New ForgeCLI session: 625157ac
+2026-03-29 07:37:02 [DEBUG] asyncio: Using selector: EpollSelector
+2026-03-29 07:37:12 [INFO] forgecli: Model changed to: qwen/qwen3-coder-480b-a35b-instruct
+2026-03-29 07:37:12 [DEBUG] asyncio: Using selector: EpollSelector
+2026-03-29 07:37:14 [DEBUG] forgecli: Stream request #1: model=qwen/qwen3-coder-480b-a35b-instruct, messages=2
+2026-03-29 07:37:14 [DEBUG] urllib3.connectionpool: Starting new HTTPS connection (1): integrate.api.nvidia.com:443
+2026-03-29 07:37:15 [DEBUG] urllib3.connectionpool: https://integrate.api.nvidia.com:443 "POST /v1/chat/completions HTTP/1.1" 200 None
+2026-03-29 07:37:16 [DEBUG] forgecli: Stream ended: 5 chunks, 0 tool_calls
+2026-03-29 07:37:16 [DEBUG] markdown_it.rules_block.code: entering code: StateBlock(line=0,level=0,tokens=0), 0, 1, False
+2026-03-29 07:37:16 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=0,level=0,tokens=0), 0, 1, False
+2026-03-29 07:37:16 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=0,level=0,tokens=0), 0, 1, False
+2026-03-29 07:37:16 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=0,level=0,tokens=0), 0, 1, False
+2026-03-29 07:37:16 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=0,level=0,tokens=0), 0, 1, False
+2026-03-29 07:37:16 [DEBUG] markdown_it.rules_block.reference: entering reference: StateBlock(line=0,level=0,tokens=0), 0, 1, False
+2026-03-29 07:37:16 [DEBUG] markdown_it.rules_block.html_block: entering html_block: StateBlock(line=0,level=0,tokens=0), 0, 1, False
+2026-03-29 07:37:16 [DEBUG] markdown_it.rules_block.heading: entering heading: StateBlock(line=0,level=0,tokens=0), 0, 1, False
+2026-03-29 07:37:16 [DEBUG] markdown_it.rules_block.lheading: entering lheading: StateBlock(line=0,level=0,tokens=0), 0, 1, False
+2026-03-29 07:37:16 [DEBUG] markdown_it.rules_block.paragraph: entering paragraph: StateBlock(line=0,level=0,tokens=0), 0, 1, False
+2026-03-29 07:37:16 [DEBUG] asyncio: Using selector: EpollSelector
+2026-03-29 07:37:24 [DEBUG] forgecli: Stream request #2: model=qwen/qwen3-coder-480b-a35b-instruct, messages=4
+2026-03-29 07:37:24 [DEBUG] urllib3.connectionpool: Resetting dropped connection: integrate.api.nvidia.com
+2026-03-29 07:37:24 [DEBUG] urllib3.connectionpool: https://integrate.api.nvidia.com:443 "POST /v1/chat/completions HTTP/1.1" 200 None
+2026-03-29 07:37:25 [DEBUG] forgecli: Stream ended: 21 chunks, 0 tool_calls
+2026-03-29 07:37:25 [DEBUG] markdown_it.rules_block.code: entering code: StateBlock(line=0,level=0,tokens=0), 0, 1, False
+2026-03-29 07:37:25 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=0,level=0,tokens=0), 0, 1, False
+2026-03-29 07:37:25 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=0,level=0,tokens=0), 0, 1, False
+2026-03-29 07:37:25 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=0,level=0,tokens=0), 0, 1, False
+2026-03-29 07:37:25 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=0,level=0,tokens=0), 0, 1, False
+2026-03-29 07:37:25 [DEBUG] markdown_it.rules_block.reference: entering reference: StateBlock(line=0,level=0,tokens=0), 0, 1, False
+2026-03-29 07:37:25 [DEBUG] markdown_it.rules_block.html_block: entering html_block: StateBlock(line=0,level=0,tokens=0), 0, 1, False
+2026-03-29 07:37:25 [DEBUG] markdown_it.rules_block.heading: entering heading: StateBlock(line=0,level=0,tokens=0), 0, 1, False
+2026-03-29 07:37:25 [DEBUG] markdown_it.rules_block.lheading: entering lheading: StateBlock(line=0,level=0,tokens=0), 0, 1, False
+2026-03-29 07:37:25 [DEBUG] markdown_it.rules_block.paragraph: entering paragraph: StateBlock(line=0,level=0,tokens=0), 0, 1, False
+2026-03-29 07:37:25 [DEBUG] asyncio: Using selector: EpollSelector
+2026-03-29 07:37:37 [DEBUG] asyncio: Using selector: EpollSelector
+2026-03-29 07:37:41 [DEBUG] asyncio: Using selector: EpollSelector
+2026-03-29 07:37:58 [INFO] forgecli: Model changed to: deepseek-ai/deepseek-v3.2
+2026-03-29 07:37:58 [DEBUG] asyncio: Using selector: EpollSelector
+2026-03-29 07:38:02 [DEBUG] forgecli: Stream request #3: model=deepseek-ai/deepseek-v3.2, messages=6
+2026-03-29 07:38:02 [DEBUG] urllib3.connectionpool: Resetting dropped connection: integrate.api.nvidia.com
+2026-03-29 07:40:02 [WARNING] forgecli: Stream timeout. Retry 1/5
+2026-03-29 07:40:03 [DEBUG] forgecli: Stream request #4: model=deepseek-ai/deepseek-v3.2, messages=6
+2026-03-29 07:40:03 [DEBUG] urllib3.connectionpool: Starting new HTTPS connection (2): integrate.api.nvidia.com:443
+2026-03-29 07:42:04 [WARNING] forgecli: Stream timeout. Retry 2/5
+2026-03-29 07:42:06 [DEBUG] forgecli: Stream request #5: model=deepseek-ai/deepseek-v3.2, messages=6
+2026-03-29 07:42:06 [DEBUG] urllib3.connectionpool: Starting new HTTPS connection (3): integrate.api.nvidia.com:443
+2026-03-29 07:44:06 [WARNING] forgecli: Stream timeout. Retry 3/5
+2026-03-29 07:44:09 [DEBUG] forgecli: Stream request #6: model=deepseek-ai/deepseek-v3.2, messages=6
+2026-03-29 07:44:09 [DEBUG] urllib3.connectionpool: Starting new HTTPS connection (4): integrate.api.nvidia.com:443
+2026-03-29 07:46:01 [DEBUG] urllib3.connectionpool: https://integrate.api.nvidia.com:443 "POST /v1/chat/completions HTTP/1.1" 200 None
+2026-03-29 07:46:04 [DEBUG] forgecli: Stream ended: 7 chunks, 0 tool_calls
+2026-03-29 07:46:04 [DEBUG] markdown_it.rules_block.code: entering code: StateBlock(line=0,level=0,tokens=0), 0, 1, False
+2026-03-29 07:46:04 [DEBUG] markdown_it.rules_block.fence: entering fence: StateBlock(line=0,level=0,tokens=0), 0, 1, False
+2026-03-29 07:46:04 [DEBUG] markdown_it.rules_block.blockquote: entering blockquote: StateBlock(line=0,level=0,tokens=0), 0, 1, False
+2026-03-29 07:46:04 [DEBUG] markdown_it.rules_block.hr: entering hr: StateBlock(line=0,level=0,tokens=0), 0, 1, False
+2026-03-29 07:46:04 [DEBUG] markdown_it.rules_block.list: entering list: StateBlock(line=0,level=0,tokens=0), 0, 1, False
+2026-03-29 07:46:04 [DEBUG] markdown_it.rules_block.reference: entering reference: StateBlock(line=0,level=0,tokens=0), 0, 1, False
+2026-03-29 07:46:04 [DEBUG] markdown_it.rules_block.html_block: entering html_block: StateBlock(line=0,level=0,tokens=0), 0, 1, False
+2026-03-29 07:46:04 [DEBUG] markdown_it.rules_block.heading: entering heading: StateBlock(line=0,level=0,tokens=0), 0, 1, False
+2026-03-29 07:46:04 [DEBUG] markdown_it.rules_block.lheading: entering lheading: StateBlock(line=0,level=0,tokens=0), 0, 1, False
+2026-03-29 07:46:04 [DEBUG] markdown_it.rules_block.paragraph: entering paragraph: StateBlock(line=0,level=0,tokens=0), 0, 1, False
+2026-03-29 07:46:04 [DEBUG] asyncio: Using selector: EpollSelector
+2026-03-29 07:49:16 [DEBUG] forgecli: Stream request #7: model=deepseek-ai/deepseek-v3.2, messages=8
+2026-03-29 07:49:16 [DEBUG] urllib3.connectionpool: Resetting dropped connection: integrate.api.nvidia.com
+2026-03-29 07:49:34 [INFO] forgecli: Session init: 0e81b21b, model=moonshotai/kimi-k2-instruct, tools=True
+2026-03-29 07:49:34 [DEBUG] asyncio: Using selector: EpollSelector
+2026-03-29 07:49:38 [INFO] forgecli: Stream: model=moonshotai/kimi-k2-instruct, tools=True
+2026-03-29 07:49:38 [DEBUG] forgecli: Stream #1: model=moonshotai/kimi-k2-instruct, msgs=2, tools=yes
+2026-03-29 07:49:38 [DEBUG] urllib3.connectionpool: Starting new HTTPS connection (1): integrate.api.nvidia.com:443
+2026-03-29 07:50:14 [INFO] forgecli: Session init: 522ba7a5, model=moonshotai/kimi-k2-instruct, tools=True
+2026-03-29 07:50:14 [DEBUG] asyncio: Using selector: EpollSelector
+2026-03-29 07:50:19 [DEBUG] asyncio: Using selector: EpollSelector
+2026-03-29 07:50:26 [INFO] forgecli: Model changed to: deepseek-ai/deepseek-v3.2
+2026-03-29 07:50:26 [DEBUG] asyncio: Using selector: EpollSelector
+2026-03-29 07:50:29 [INFO] forgecli: Stream: model=deepseek-ai/deepseek-v3.2, tools=True
+2026-03-29 07:50:29 [DEBUG] forgecli: Stream #1: model=deepseek-ai/deepseek-v3.2, msgs=2, tools=yes
+2026-03-29 07:50:29 [DEBUG] urllib3.connectionpool: Starting new HTTPS connection (1): integrate.api.nvidia.com:443

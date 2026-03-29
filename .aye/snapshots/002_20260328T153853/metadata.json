@@ -1,0 +1,18 @@
+{
+  "timestamp": "20260328T153853",
+  "files": [
+    {
+      "original": "/root/settings.py",
+      "snapshot": "/root/.aye/snapshots/002_20260328T153853/settings.py"
+    },
+    {
+      "original": "/root/app.py",
+      "snapshot": "/root/.aye/snapshots/002_20260328T153853/app.py"
+    },
+    {
+      "original": "/root/chat_manager.py",
+      "snapshot": "/root/.aye/snapshots/002_20260328T153853/chat_manager.py"
+    }
+  ],
+  "prompt": "enable stream too?"
+}

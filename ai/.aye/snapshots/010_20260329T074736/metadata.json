@@ -1,0 +1,22 @@
+{
+  "timestamp": "20260329T074736",
+  "files": [
+    {
+      "original": "/root/ai/conf/conf.py",
+      "snapshot": "/root/ai/.aye/snapshots/010_20260329T074736/conf.py"
+    },
+    {
+      "original": "/root/ai/lib/api.py",
+      "snapshot": "/root/ai/.aye/snapshots/010_20260329T074736/api.py"
+    },
+    {
+      "original": "/root/ai/lib/agent.py",
+      "snapshot": "/root/ai/.aye/snapshots/010_20260329T074736/agent.py"
+    },
+    {
+      "original": "/root/ai/web/index.html",
+      "snapshot": "/root/ai/.aye/snapshots/010_20260329T074736/index.html"
+    }
+  ],
+  "prompt": "NONE OF THE MODELS REALLY WOLRING FINE , YOU IXED ONLY THE THOSE WHICH I TLD , WHAT ABOUT OTHER 22? ,  ITS THINKING THINKING THINKING , EVE SSE NO WORKING"
+}

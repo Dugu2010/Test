@@ -1,0 +1,70 @@
+{
+  "timestamp": "20260328T135004",
+  "files": [
+    {
+      "original": "/root/ai/main.py",
+      "snapshot": "/root/ai/.aye/snapshots/003_20260328T135004/main.py"
+    },
+    {
+      "original": "/root/ai/requirements.txt",
+      "snapshot": "/root/ai/.aye/snapshots/003_20260328T135004/requirements.txt"
+    },
+    {
+      "original": "/root/ai/setup.sh",
+      "snapshot": "/root/ai/.aye/snapshots/003_20260328T135004/setup.sh"
+    },
+    {
+      "original": "/root/ai/.env",
+      "snapshot": "/root/ai/.aye/snapshots/003_20260328T135004/.env"
+    },
+    {
+      "original": "/root/ai/conf/__init__.py",
+      "snapshot": "/root/ai/.aye/snapshots/003_20260328T135004/__init__.py"
+    },
+    {
+      "original": "/root/ai/conf/conf.py",
+      "snapshot": "/root/ai/.aye/snapshots/003_20260328T135004/conf.py"
+    },
+    {
+      "original": "/root/ai/lib/__init__.py",
+      "snapshot": "/root/ai/.aye/snapshots/003_20260328T135004/__init__.py"
+    },
+    {
+      "original": "/root/ai/lib/utils.py",
+      "snapshot": "/root/ai/.aye/snapshots/003_20260328T135004/utils.py"
+    },
+    {
+      "original": "/root/ai/lib/tools.py",
+      "snapshot": "/root/ai/.aye/snapshots/003_20260328T135004/tools.py"
+    },
+    {
+      "original": "/root/ai/lib/api.py",
+      "snapshot": "/root/ai/.aye/snapshots/003_20260328T135004/api.py"
+    },
+    {
+      "original": "/root/ai/lib/agent.py",
+      "snapshot": "/root/ai/.aye/snapshots/003_20260328T135004/agent.py"
+    },
+    {
+      "original": "/root/ai/lib/tui.py",
+      "snapshot": "/root/ai/.aye/snapshots/003_20260328T135004/tui.py"
+    },
+    {
+      "original": "/root/ai/tools/init.sh",
+      "snapshot": "/root/ai/.aye/snapshots/003_20260328T135004/init.sh"
+    },
+    {
+      "original": "/root/ai/tools/update.sh",
+      "snapshot": "/root/ai/.aye/snapshots/003_20260328T135004/update.sh"
+    },
+    {
+      "original": "/root/ai/tools/clean.sh",
+      "snapshot": "/root/ai/.aye/snapshots/003_20260328T135004/clean.sh"
+    },
+    {
+      "original": "/root/ai/payload.json",
+      "snapshot": "/root/ai/.aye/snapshots/003_20260328T135004/payload.json"
+    }
+  ],
+  "prompt": "using those things make an ai cli agent capable of calling any tool properly like cmd exec. or wrtite create tools etc . the tui must be responsive to all terminal sizes always + good cli tui + better logic and error handling + proper optimisation to avoid rate limit and everything should be in /root/ai folder you should not ask me anything run all the cmds and give the final production reeady output and cli should laso contain all essentials / cmds URL: https://integrate.api.nvidia.com Endpoint: POST /v1/chat/completions\n"
+}

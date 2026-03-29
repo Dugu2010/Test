@@ -1,0 +1,58 @@
+{
+  "timestamp": "20260329T032147",
+  "files": [
+    {
+      "original": "/root/ai/conf/conf.py",
+      "snapshot": "/root/ai/.aye/snapshots/004_20260329T032147/conf.py"
+    },
+    {
+      "original": "/root/ai/main.py",
+      "snapshot": "/root/ai/.aye/snapshots/004_20260329T032147/main.py"
+    },
+    {
+      "original": "/root/ai/lib/api.py",
+      "snapshot": "/root/ai/.aye/snapshots/004_20260329T032147/api.py"
+    },
+    {
+      "original": "/root/ai/lib/agent.py",
+      "snapshot": "/root/ai/.aye/snapshots/004_20260329T032147/agent.py"
+    },
+    {
+      "original": "/root/ai/lib/tui.py",
+      "snapshot": "/root/ai/.aye/snapshots/004_20260329T032147/tui.py"
+    },
+    {
+      "original": "/root/ai/lib/utils.py",
+      "snapshot": "/root/ai/.aye/snapshots/004_20260329T032147/utils.py"
+    },
+    {
+      "original": "/root/ai/lib/tools.py",
+      "snapshot": "/root/ai/.aye/snapshots/004_20260329T032147/tools.py"
+    },
+    {
+      "original": "/root/ai/lib/block_parser.py",
+      "snapshot": "/root/ai/.aye/snapshots/004_20260329T032147/block_parser.py"
+    },
+    {
+      "original": "/root/ai/lib/block_renderer.py",
+      "snapshot": "/root/ai/.aye/snapshots/004_20260329T032147/block_renderer.py"
+    },
+    {
+      "original": "/root/ai/setup.sh",
+      "snapshot": "/root/ai/.aye/snapshots/004_20260329T032147/setup.sh"
+    },
+    {
+      "original": "/root/ai/tools/init.sh",
+      "snapshot": "/root/ai/.aye/snapshots/004_20260329T032147/init.sh"
+    },
+    {
+      "original": "/root/ai/tools/update.sh",
+      "snapshot": "/root/ai/.aye/snapshots/004_20260329T032147/update.sh"
+    },
+    {
+      "original": "/root/ai/tools/clean.sh",
+      "snapshot": "/root/ai/.aye/snapshots/004_20260329T032147/clean.sh"
+    }
+  ],
+  "prompt": "fix error list  index out of range + everywhere name it ForrgeCLI or ForgeAI respectively"
+}

@@ -1,0 +1,30 @@
+{
+  "timestamp": "20260329T035651",
+  "files": [
+    {
+      "original": "/root/ai/conf/conf.py",
+      "snapshot": "/root/ai/.aye/snapshots/006_20260329T035651/conf.py"
+    },
+    {
+      "original": "/root/ai/requirements.txt",
+      "snapshot": "/root/ai/.aye/snapshots/006_20260329T035651/requirements.txt"
+    },
+    {
+      "original": "/root/ai/lib/auto_model.py",
+      "snapshot": "/root/ai/.aye/snapshots/006_20260329T035651/auto_model.py"
+    },
+    {
+      "original": "/root/ai/lib/web_server.py",
+      "snapshot": "/root/ai/.aye/snapshots/006_20260329T035651/web_server.py"
+    },
+    {
+      "original": "/root/ai/main.py",
+      "snapshot": "/root/ai/.aye/snapshots/006_20260329T035651/main.py"
+    },
+    {
+      "original": "/root/ai/web/index.html",
+      "snapshot": "/root/ai/.aye/snapshots/006_20260329T035651/index.html"
+    }
+  ],
+  "prompt": "modify the agent that, when executed using python main.py (and later via a compiled binary command like forge), automatically launches a local web UI on port 1432 with a clean, professional, cozy, and aesthetic design similar to modern AI platforms like Openclaw (best example), ChatGPT or Gemini, including a full-featured interface with chat conversations, history management, multi-session tabs, message streaming, markdown/code rendering, copy buttons, and smooth UI transitions; include core features such as file upload (images, documents, code), drag-and-drop support, image preview, and tools like \u201canalyze image\u201d, \u201cextract text\u201d, \u201cexplain file\u201d, etc.; implement a smart \u201cAuto Model\u201d system that intelligently selects the best model based on user intent (e.g., image generation prompts automatically route to an image model, coding tasks to a code-optimized model, general chat to a conversational model, vision tasks to multimodal models, etc.), while also allowing manual model selection from a settings panel; add a settings section with options like model switching, API key management, temperature/max tokens controls, system prompt editing, theme toggle (dark/light), performance modes, and local/remote model configuration; support plugins/tools such as web search, code execution sandbox, terminal commands, and file system access (with permission prompts); include authentication (optional local login), persistent chat storage, export/import conversations, and keyboard shortcuts; ensure the backend is modular (FastAPI/Flask) with WebSocket support for real-time responses, and the frontend is responsive (React/Vue or simple HTML+JS if lightweight) with a polished UX, animations, and sidebar navigation; overall, design it as a complete, extensible, developer-friendly AI workspace that combines CLI power with a modern web app experience."
+}

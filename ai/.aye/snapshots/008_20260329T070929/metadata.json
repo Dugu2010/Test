@@ -1,0 +1,18 @@
+{
+  "timestamp": "20260329T070929",
+  "files": [
+    {
+      "original": "/root/ai/lib/web_server.py",
+      "snapshot": "/root/ai/.aye/snapshots/008_20260329T070929/web_server.py"
+    },
+    {
+      "original": "/root/ai/lib/block_renderer.py",
+      "snapshot": "/root/ai/.aye/snapshots/008_20260329T070929/block_renderer.py"
+    },
+    {
+      "original": "/root/ai/web/index.html",
+      "snapshot": "/root/ai/.aye/snapshots/008_20260329T070929/index.html"
+    }
+  ],
+  "prompt": "error nonr type object not iterable + why streamin not working?  dont wanna wait for hours"
+}
