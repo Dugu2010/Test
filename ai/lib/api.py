@@ -23,6 +23,7 @@ from conf.conf import (
     RATE_LIMIT_BACKOFF_BASE,
     RATE_LIMIT_BACKOFF_MAX,
     RATE_LIMIT_MAX_RETRIES,
+    model_is_chat,
     model_supports_tools,
 )
 
@@ -178,6 +179,9 @@ class NvidiaAPIClient:
         self._total_errors = 0
 
     def set_model(self, model: str):
+        if not model_is_chat(model):
+            raise ValueError("A non-empty chat model name is required.")
+        model = model.strip()
         self.model = model
         logger.info(f"Model changed to: {model}")
 
@@ -218,6 +222,7 @@ class NvidiaAPIClient:
         """Send chat completion with retry. Auto-retries without tools on 400."""
         payload = self._build_payload(messages, tools, stream)
         has_tools_in_payload = 'tools' in payload
+        tool_fallback = False
 
         retries = 0
         while retries <= RATE_LIMIT_MAX_RETRIES:
@@ -272,6 +277,7 @@ class NvidiaAPIClient:
                     payload.pop('tools', None)
                     payload.pop('tool_choice', None)
                     has_tools_in_payload = False
+                    tool_fallback = True
                     self._total_errors += 1
                     continue  # immediate retry without tools
 
@@ -292,6 +298,8 @@ class NvidiaAPIClient:
 
                 data = resp.json()
                 logger.debug(f"API response OK: {json.dumps(data, default=str)[:500]}")
+                if tool_fallback and isinstance(data, dict):
+                    data['_tool_fallback'] = True
                 return data
 
             except requests.exceptions.Timeout:
@@ -427,6 +435,14 @@ class NvidiaAPIClient:
                     payload.pop('tool_choice', None)
                     has_tools = False
                     self._total_errors += 1
+                    yield {
+                        'type': 'warning',
+                        'message': (
+                            "The API rejected tool calling for this model. Retrying "
+                            "without tools; this response cannot run tools. Try a "
+                            "different model if you need tool access."
+                        ),
+                    }
                     continue
 
                 # Other client errors

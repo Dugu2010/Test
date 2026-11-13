@@ -1,36 +1,46 @@
-#!/bin/bash
-set -e
+#!/usr/bin/env bash
+set -Eeuo pipefail
+
+SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+cd "$SCRIPT_DIR"
 
 echo "=== ForgeCLI Setup ==="
-echo ""
 
-# Create directory structure
-mkdir -p /root/ai/{conf,lib,tools,logs,sessions}
+mkdir -p conf lib tools logs sessions uploads web
 
-cd /root/ai
+if command -v python3 >/dev/null 2>&1; then
+    PYTHON=python3
+elif command -v python >/dev/null 2>&1; then
+    PYTHON=python
+else
+    echo "[ERROR] Python 3 is required." >&2
+    exit 1
+fi
 
-# Install dependencies
 echo "[1/3] Installing Python dependencies..."
-pip install -q -r requirements.txt 2>/dev/null || pip3 install -q -r requirements.txt 2>/dev/null
+"$PYTHON" -m pip install -r requirements.txt
 
-# Make scripts executable
-chmod +x tools/*.sh 2>/dev/null || true
-chmod +x main.py
+for script in tools/*.sh; do
+    if [[ -f "$script" ]]; then
+        chmod +x "$script"
+    fi
+done
+chmod +x main.py bin/ai.py
 
-# Check for API key
-if [ -z "$NVIDIA_API_KEY" ]; then
-    if [ ! -f .env ] || ! grep -q 'NVIDIA_API_KEY' .env 2>/dev/null; then
-        echo ""
-        echo "[!] NVIDIA_API_KEY not found."
-        read -p "    Enter your NVIDIA API key: " api_key
-        if [ -n "$api_key" ]; then
-            echo "NVIDIA_API_KEY=$api_key" > .env
-            echo "    Key saved to /root/ai/.env"
+if [[ -z "${NVIDIA_API_KEY:-}" ]] && ! grep -q '^NVIDIA_API_KEY=' .env 2>/dev/null; then
+    if [[ -t 0 ]]; then
+        read -r -s -p "NVIDIA API key (press Enter to configure later): " api_key
+        echo
+        if [[ -n "$api_key" ]]; then
+            umask 077
+            printf 'NVIDIA_API_KEY=%s\n' "$api_key" > .env
+            chmod 600 .env
+            unset api_key
         fi
+    else
+        echo "[WARN] NVIDIA_API_KEY is not set; configure it before using the CLI."
     fi
 fi
 
-echo ""
 echo "[2/3] Setup complete."
-echo "[3/3] Run with:  cd /root/ai && python main.py"
-echo ""
+echo "[3/3] Run from this directory with: $PYTHON bin/ai.py"

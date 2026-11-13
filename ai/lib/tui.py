@@ -3,6 +3,8 @@
 import os
 import sys
 import json
+import math
+import tempfile
 from typing import List
 from rich.console import Console, Group
 from rich.panel import Panel
@@ -12,7 +14,7 @@ from rich.markdown import Markdown
 from rich.live import Live
 from rich import box
 from prompt_toolkit import PromptSession
-from prompt_toolkit.history import FileHistory
+from prompt_toolkit.history import FileHistory, InMemoryHistory
 from prompt_toolkit.auto_suggest import AutoSuggestFromHistory
 from prompt_toolkit.formatted_text import HTML
 from lib.agent import Agent
@@ -49,6 +51,8 @@ from conf.conf import (
     STREAM_ENABLED,
     STREAM_REFRESH_RATE,
     WEB_PORT,
+    model_is_chat,
+    model_supports_tools,
 )
 
 STYLE_HEADER = "bold bright_cyan"
@@ -78,44 +82,89 @@ def _load_persisted_settings() -> dict:
     }
     if os.path.exists(SETTINGS_FILE):
         try:
-            with open(SETTINGS_FILE) as f:
+            with open(SETTINGS_FILE, encoding='utf-8') as f:
                 saved = json.load(f)
-            defaults.update(saved)
-        except Exception:
+            if isinstance(saved, dict):
+                defaults.update(saved)
+            else:
+                logger.warning("Ignoring settings file: expected a JSON object")
+        except FileNotFoundError:
             pass
+        except (OSError, UnicodeError, json.JSONDecodeError):
+            logger.exception("Could not load persisted settings")
     return defaults
 
 
 def _save_persisted_settings(settings: dict):
     """Save settings to disk."""
+    temp_path = None
     try:
-        with open(SETTINGS_FILE, 'w') as f:
+        settings_dir = os.path.dirname(SETTINGS_FILE)
+        fd, temp_path = tempfile.mkstemp(prefix='.forge_settings.', dir=settings_dir)
+        with os.fdopen(fd, 'w', encoding='utf-8') as f:
             json.dump(settings, f, indent=2)
-    except Exception as e:
-        logger.error(f"Failed to save settings: {e}")
+            f.flush()
+            os.fsync(f.fileno())
+        if os.name != 'nt':
+            os.chmod(temp_path, 0o600)
+        os.replace(temp_path, SETTINGS_FILE)
+        return True
+    except (OSError, TypeError, ValueError):
+        logger.exception("Failed to save settings")
+        return False
+    finally:
+        if temp_path and os.path.exists(temp_path):
+            try:
+                os.remove(temp_path)
+            except OSError:
+                logger.exception("Failed to remove temporary settings file")
 
 
 def _apply_settings_to_agent(agent, settings: dict):
     """Apply persisted settings to an agent."""
     # Model
     saved_model = settings.get('model', DEFAULT_MODEL)
-    if saved_model and saved_model != 'auto' and saved_model in AVAILABLE_MODELS:
-        agent.client.set_model(saved_model)
+    if saved_model and saved_model != 'auto':
+        if model_is_chat(saved_model):
+            agent.client.set_model(saved_model)
+        else:
+            logger.warning("Ignoring invalid persisted model setting")
     # Temperature
     temp = settings.get('temperature')
     if temp is not None:
-        agent.client.temperature = float(temp)
+        try:
+            temp = float(temp)
+            if math.isfinite(temp) and 0 <= temp <= 2:
+                agent.client.temperature = temp
+            else:
+                logger.warning("Ignoring invalid temperature setting: expected 0..2")
+        except (TypeError, ValueError):
+            logger.warning("Ignoring invalid temperature setting")
     # Max tokens
     mt = settings.get('max_tokens')
     if mt is not None:
-        agent.client.max_tokens = int(mt)
+        try:
+            mt = int(mt)
+            if mt > 0:
+                agent.client.max_tokens = mt
+            else:
+                logger.warning("Ignoring invalid max_tokens setting: expected a positive integer")
+        except (TypeError, ValueError):
+            logger.warning("Ignoring invalid max_tokens setting")
     # Top P
     tp = settings.get('top_p')
     if tp is not None:
-        agent.client.top_p = float(tp)
+        try:
+            tp = float(tp)
+            if math.isfinite(tp) and 0 <= tp <= 1:
+                agent.client.top_p = tp
+            else:
+                logger.warning("Ignoring invalid top_p setting: expected 0..1")
+        except (TypeError, ValueError):
+            logger.warning("Ignoring invalid top_p setting")
     # API key
     api_key = settings.get('api_key', '') or os.environ.get('NVIDIA_API_KEY', '')
-    if api_key:
+    if isinstance(api_key, str) and api_key:
         agent.client.api_key = api_key
         agent.client.session.headers['Authorization'] = f'Bearer {api_key}'
 
@@ -133,8 +182,15 @@ class AgentTUI:
         self._spin_tick = 0
 
         hist_path = os.path.join(PROJECT_ROOT, '.prompt_history')
+        try:
+            with open(hist_path, 'a', encoding='utf-8'):
+                pass
+            history = FileHistory(hist_path)
+        except OSError:
+            logger.exception("Could not open prompt history; using in-memory history")
+            history = InMemoryHistory()
         self.prompt_session = PromptSession(
-            history=FileHistory(hist_path),
+            history=history,
             auto_suggest=AutoSuggestFromHistory(),
             enable_history_search=True,
         )
@@ -190,9 +246,11 @@ class AgentTUI:
     # \u2500\u2500 Synchronous processing \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500
 
     def _process_sync(self, user_input: str):
-        with self.console.status("[dim cyan]thinking", spinner="dots") as status:
-            self._current_status = status
-            response = self.agent.process(user_input)
+        try:
+            with self.console.status("[dim cyan]thinking", spinner="dots") as status:
+                self._current_status = status
+                response = self.agent.process(user_input)
+        finally:
             self._current_status = None
 
         self._display_response(response)
@@ -294,6 +352,17 @@ class AgentTUI:
                         ))
                         live.update(_build_display())
 
+                    elif etype == 'warning':
+                        status_text = ''
+                        display_parts.append(Panel(
+                            Text(event.get('message', 'Tool calling was disabled for this request.'),
+                                 style="yellow"),
+                            border_style="yellow",
+                            box=box.ROUNDED if not compact else box.MINIMAL,
+                            expand=True,
+                        ))
+                        live.update(_build_display())
+
                     elif etype == 'done':
                         status_text = ''
                         live.update(_build_display())
@@ -374,6 +443,7 @@ class AgentTUI:
         cols, _ = get_terminal_size()
         title = f"\U0001f525 {APP_NAME} v{APP_VERSION}"
         subtitle = f"Model: {self.agent.client.model}"
+        tool_indicator = f"Tools: {'ON' if self.agent.client.tools_supported else 'OFF for this model'}"
         stream_indicator = f"Streaming: {'ON' if self.streaming else 'OFF'}"
         key_status = "API Key: set" if self.agent.client.api_key else "API Key: [red]not set[/red]"
 
@@ -381,8 +451,10 @@ class AgentTUI:
             banner_lines = [
                 f"[{STYLE_HEADER}]{title}[/]",
                 f"[{STYLE_MUTED}]{subtitle}[/]",
+                f"[{STYLE_MUTED}]{tool_indicator}[/]",
                 f"[{STYLE_MUTED}]{stream_indicator}[/]",
                 f"[{STYLE_MUTED}]{key_status}[/]",
+                f"[{STYLE_MUTED}]Workspace: {os.getcwd()}[/]",
                 "",
                 f"[{STYLE_MUTED}]Type a message or /help for commands[/]",
             ]
@@ -394,7 +466,10 @@ class AgentTUI:
             ))
         else:
             self.console.print(f"[{STYLE_HEADER}]{title}[/]")
-            self.console.print(f"[{STYLE_MUTED}]{subtitle} | {stream_indicator} | /help[/]")
+            self.console.print(
+                f"[{STYLE_MUTED}]{subtitle} | {tool_indicator} | "
+                f"{stream_indicator} | /help[/]"
+            )
 
         self.console.print()
 
@@ -518,7 +593,7 @@ class AgentTUI:
         commands = [
             ("/help, /h", "Show this help message"),
             ("/clear, /cls", "Clear screen"),
-            ("/model [name|#]", "Show or change the AI model"),
+            ("/model [name|#]", "Show or change the model and tool support"),
             ("/tools", "List available tools"),
             ("/history", "Show conversation history"),
             ("/new", "Start new conversation session"),
@@ -529,7 +604,7 @@ class AgentTUI:
             ("/stream, /s", "Toggle streaming mode"),
             ("/verbose, /v", "Toggle verbose output"),
             ("/stats", "Show API usage statistics"),
-            ("/cd <dir>", "Change working directory"),
+            ("/cd <dir>", "Change workspace for relative file and shell tools"),
             ("/api <subcmd>", "API management (info/models/settings/health/key)"),
             ("/exit, /quit, /q", "Exit ForgeCLI"),
         ]
@@ -552,11 +627,13 @@ class AgentTUI:
             table.add_column("#", style="dim", width=4)
             table.add_column("Model", style="cyan")
             table.add_column("Tags", style="dim")
+            table.add_column("Tools", style="green")
             for i, model in enumerate(AVAILABLE_MODELS, 1):
                 marker = " \u25c0" if model == self.agent.client.model else ""
                 meta = MODEL_META.get(model, {})
                 tags = ', '.join(meta.get('tags', [])[:3])
-                table.add_row(str(i), f"{model}{marker}", tags)
+                tool_status = "yes" if model_supports_tools(model) else "no"
+                table.add_row(str(i), f"{model}{marker}", tags, tool_status)
             self.console.print(table)
             self.console.print(f"\n[{STYLE_MUTED}]Usage: /model <number or name>[/]")
         else:
@@ -568,12 +645,27 @@ class AgentTUI:
                 else:
                     self.console.print(f"[{STYLE_ERROR}]Invalid model number[/]")
                     return
+            if not arg or not model_is_chat(arg):
+                self.console.print(
+                    f"[{STYLE_ERROR}]That model cannot be used for chat. "
+                    "Choose a chat model from /model.[/]"
+                )
+                return
             self.agent.client.set_model(arg)
             # Persist model change
             settings = _load_persisted_settings()
             settings['model'] = arg
-            _save_persisted_settings(settings)
-            self.console.print(f"[{STYLE_SUCCESS}]Model changed to: {arg} (saved)[/]")
+            if _save_persisted_settings(settings):
+                self.console.print(f"[{STYLE_SUCCESS}]Model changed to: {arg} (saved)[/]")
+            else:
+                self.console.print(
+                    f"[{STYLE_ERROR}]Model changed for this session, but could not be saved.[/]"
+                )
+            if not self.agent.client.tools_supported:
+                self.console.print(
+                    f"[{STYLE_ERROR}]This model is not known to support tools. "
+                    "Choose a model marked 'yes' to enable them.[/]"
+                )
         self.console.print()
 
     def _cmd_history(self, _arg=''):
@@ -645,13 +737,20 @@ class AgentTUI:
         self.console.print()
 
     def _cmd_tools(self, _arg=''):
-        table = Table(title=f"{AI_NAME} Tools", box=box.SIMPLE, expand=True)
+        enabled = self.agent.client.tools_supported
+        state = "available" if enabled else "disabled for the current model"
+        table = Table(title=f"{AI_NAME} Tools ({state})", box=box.SIMPLE, expand=True)
         table.add_column("Tool", style="bold yellow", min_width=14)
         table.add_column("Description", style="white")
         for tool_def in TOOL_DEFINITIONS:
             fn = tool_def['function']
             table.add_row(fn['name'], fn['description'][:100])
         self.console.print(table)
+        if not enabled:
+            self.console.print(
+                f"[{STYLE_ERROR}]Current model {self.agent.client.model} is not "
+                "configured for tool calling. Use /model and select a model marked yes.[/]"
+            )
         self.console.print()
 
     def _cmd_verbose(self, _arg=''):
@@ -704,7 +803,11 @@ class AgentTUI:
             'key': self._api_key,
         }
 
-        handler = api_handlers.get(subcmd, self._api_help)
+        handler = api_handlers.get(subcmd)
+        if handler is None:
+            self.console.print(f"[{STYLE_ERROR}]Unknown /api subcommand: {subcmd}[/]")
+            self.console.print("[dim]Use /api help to see valid commands.[/]\n")
+            return
         handler(sub_arg)
 
     def _api_help(self, _arg=''):
@@ -787,22 +890,49 @@ class AgentTUI:
             except ValueError:
                 self.console.print(f"[{STYLE_ERROR}]{key} must be a number[/]")
                 return
+            maximum = 2 if key == 'temperature' else 1
+            if not math.isfinite(value) or not 0 <= value <= maximum:
+                self.console.print(
+                    f"[{STYLE_ERROR}]{key} must be between 0 and {maximum}[/]"
+                )
+                return
         elif key == 'max_tokens':
             try:
                 value = int(value)
             except ValueError:
                 self.console.print(f"[{STYLE_ERROR}]{key} must be an integer[/]")
                 return
+            if value <= 0:
+                self.console.print(f"[{STYLE_ERROR}]max_tokens must be positive[/]")
+                return
         elif key == 'auto_model':
-            value = value.lower() in ('true', '1', 'yes', 'on')
+            normalized = value.lower()
+            if normalized not in ('true', '1', 'yes', 'on', 'false', '0', 'no', 'off'):
+                self.console.print(
+                    f"[{STYLE_ERROR}]auto_model must be true or false[/]"
+                )
+                return
+            value = normalized in ('true', '1', 'yes', 'on')
+        elif key == 'model':
+            if not model_is_chat(value):
+                self.console.print(f"[{STYLE_ERROR}]That model cannot be used for chat.[/]")
+                return
+            value = value.strip()
 
         settings[key] = value
-        _save_persisted_settings(settings)
+        if not _save_persisted_settings(settings):
+            self.console.print(f"[{STYLE_ERROR}]Could not save setting {key}.[/]")
+            self.console.print()
+            return
 
         # Apply to current agent
         _apply_settings_to_agent(self.agent, settings)
 
         self.console.print(f"[{STYLE_SUCCESS}]{key} updated and saved[/]")
+        if key == 'model' and not self.agent.client.tools_supported:
+            self.console.print(
+                f"[{STYLE_ERROR}]The selected model is not configured for tool calling.[/]"
+            )
         self.console.print()
 
     def _api_health(self, _arg=''):
@@ -815,6 +945,7 @@ class AgentTUI:
             else:
                 self.console.print(f"[{STYLE_ERROR}]API returned {resp.status_code}[/]")
         except Exception as e:
+            logger.exception("API health check failed")
             self.console.print(f"[{STYLE_ERROR}]API unreachable: {e}[/]")
 
         if self.agent.client.api_key:
@@ -834,14 +965,22 @@ class AgentTUI:
                 self.console.print(f"[{STYLE_MUTED}]Set with: /api key nvapi-...[/]")
         else:
             new_key = arg.strip()
+            if not new_key:
+                self.console.print(f"[{STYLE_ERROR}]API key cannot be empty[/]")
+                self.console.print()
+                return
             self.agent.client.api_key = new_key
             self.agent.client.session.headers['Authorization'] = f'Bearer {new_key}'
             os.environ['NVIDIA_API_KEY'] = new_key
             # Persist
             settings = _load_persisted_settings()
             settings['api_key'] = new_key
-            _save_persisted_settings(settings)
-            self.console.print(f"[{STYLE_SUCCESS}]API key updated and saved[/]")
+            if _save_persisted_settings(settings):
+                self.console.print(f"[{STYLE_SUCCESS}]API key updated and saved[/]")
+            else:
+                self.console.print(
+                    f"[{STYLE_ERROR}]API key is set for this session, but could not be saved.[/]"
+                )
         self.console.print()
 
     def _cmd_exit(self, _arg=''):

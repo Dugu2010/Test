@@ -142,9 +142,9 @@ ALLOWED_UPLOAD_EXTENSIONS = {
 
 def model_supports_tools(model: str) -> bool:
     """Check if a model supports function calling / tools."""
-    return model in TOOL_CAPABLE_MODELS
+    return isinstance(model, str) and model in TOOL_CAPABLE_MODELS
 
 
 def model_is_chat(model: str) -> bool:
     """Check if a model supports chat completions (not just embeddings)."""
-    return model not in NON_CHAT_MODELS
+    return isinstance(model, str) and bool(model.strip()) and model not in NON_CHAT_MODELS

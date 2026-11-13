@@ -103,15 +103,18 @@ class Agent:
 
     def _init_session(self):
         """Initialize session with appropriate system prompt."""
-        prompt = SYSTEM_PROMPT if self.client.tools_supported else SYSTEM_PROMPT_NO_TOOLS
+        prompt = self._current_system_prompt()
         self.messages = [{'role': 'system', 'content': prompt}]
         logger.info(f"Session init: {self.session_id}, model={self.client.model}, tools={self.client.tools_supported}")
+
+    def _current_system_prompt(self):
+        prompt = SYSTEM_PROMPT if self.client.tools_supported else SYSTEM_PROMPT_NO_TOOLS
+        return f"{prompt}\nCurrent working directory: {os.getcwd()}"
 
     def _update_system_prompt(self):
         """Update system prompt when model changes (tool support might change)."""
         if self.messages and self.messages[0].get('role') == 'system':
-            prompt = SYSTEM_PROMPT if self.client.tools_supported else SYSTEM_PROMPT_NO_TOOLS
-            self.messages[0]['content'] = prompt
+            self.messages[0]['content'] = self._current_system_prompt()
 
     def new_session(self):
         self.save_session()
@@ -139,16 +142,23 @@ class Agent:
                 error_msg = response.get('message', 'Unknown API error')
                 logger.error(f"API error: {error_msg}")
                 return f"\u274c {error_msg}"
+            tool_warning = ""
+            if isinstance(response, dict) and response.get('_tool_fallback'):
+                tool_warning = (
+                    "\u26a0\ufe0f The API rejected tool calling for this model. "
+                    "This response was retried without tools; choose another model "
+                    "if you need tool access.\n\n"
+                )
 
             choice = _safe_choice(response)
             if choice is None:
                 logger.error(f"No choices: {json.dumps(response, default=str)[:500]}")
-                return "\u274c Empty response from model."
+                return f"{tool_warning}\u274c Empty response from model."
 
             assistant_msg = choice.get('message')
             if assistant_msg is None or not isinstance(assistant_msg, dict):
                 logger.error(f"No message in choice: {json.dumps(choice, default=str)[:500]}")
-                return "\u274c Malformed response from model."
+                return f"{tool_warning}\u274c Malformed response from model."
 
             msg_to_append = {'role': 'assistant'}
             content = assistant_msg.get('content')
@@ -165,7 +175,7 @@ class Agent:
 
             # No tool calls → done
             if not raw_tcs:
-                return content or '(no response)'
+                return tool_warning + (content or '(no response)')
 
             # Execute tools
             for tc in raw_tcs:
@@ -244,6 +254,9 @@ class Agent:
                         yield {'type': 'error', 'text': error_text}
                         got_error = True
                         break
+
+                    elif etype == 'warning':
+                        yield event
 
                     elif etype == 'stream_end':
                         pass

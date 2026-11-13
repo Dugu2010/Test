@@ -4,19 +4,37 @@ import os
 import json
 import logging
 import datetime
+import sys
 from conf.conf import LOG_FILE, MAX_TOOL_OUTPUT_CHARS
 
 
 def setup_logging():
-    """Configure logging to file."""
-    os.makedirs(os.path.dirname(LOG_FILE), exist_ok=True)
-    logging.basicConfig(
-        filename=LOG_FILE,
-        level=logging.DEBUG,
-        format='%(asctime)s [%(levelname)s] %(name)s: %(message)s',
+    """Configure file logging, falling back to stderr if the log is unavailable."""
+    app_logger = logging.getLogger('forgecli')
+    if app_logger.handlers:
+        return app_logger
+
+    formatter = logging.Formatter(
+        '%(asctime)s [%(levelname)s] %(name)s: %(message)s',
         datefmt='%Y-%m-%d %H:%M:%S',
     )
-    return logging.getLogger('forgecli')
+    try:
+        os.makedirs(os.path.dirname(LOG_FILE), exist_ok=True)
+        handler = logging.FileHandler(LOG_FILE, encoding='utf-8')
+    except OSError as exc:
+        handler = logging.StreamHandler(sys.stderr)
+        app_logger.addHandler(handler)
+        app_logger.setLevel(logging.DEBUG)
+        app_logger.propagate = False
+        handler.setFormatter(formatter)
+        app_logger.warning("File logging unavailable (%s); logging to stderr.", exc)
+        return app_logger
+
+    handler.setFormatter(formatter)
+    app_logger.addHandler(handler)
+    app_logger.setLevel(logging.DEBUG)
+    app_logger.propagate = False
+    return app_logger
 
 
 logger = setup_logging()

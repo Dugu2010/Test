@@ -1,8 +1,5 @@
-#!/bin/bash
-set -e
-echo "=== ForgeCLI Initialization ==="
-echo "Setting up directories..."
-mkdir -p /root/ai/{conf,lib,tools,logs,sessions}
-echo "Installing dependencies..."
-cd /root/ai && pip install -q -r requirements.txt 2>/dev/null
-echo "Initialization complete."
+#!/usr/bin/env bash
+set -Eeuo pipefail
+
+SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd)"
+exec bash "$SCRIPT_DIR/setup.sh"
