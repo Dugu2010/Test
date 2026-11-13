@@ -225,11 +225,18 @@ class Agent:
             content_text = ''
             tool_calls_raw = []
             got_error = False
+            stream_error_text = ''
 
             try:
                 stream = self.client.chat_stream(self.messages, tools=use_tools)
                 if stream is None:
-                    yield {'type': 'error', 'text': 'Internal error: stream is None'}
+                    error_text = 'Internal error: model client returned no stream.'
+                    logger.error(error_text)
+                    yield {'type': 'error', 'text': error_text}
+                    self.messages.append({
+                        'role': 'assistant',
+                        'content': f'[Request failed: {error_text}]',
+                    })
                     return
 
                 for event in stream:
@@ -252,6 +259,7 @@ class Agent:
                         error_text = event.get('message') or event.get('text') or 'Stream error'
                         logger.error(f"Stream error: {error_text}")
                         yield {'type': 'error', 'text': error_text}
+                        stream_error_text = error_text
                         got_error = True
                         break
 
@@ -264,9 +272,17 @@ class Agent:
             except Exception as e:
                 logger.error(f"process_streaming exception: {e}", exc_info=True)
                 yield {'type': 'error', 'text': f'Error: {e}'}
+                self.messages.append({
+                    'role': 'assistant',
+                    'content': f'[Request failed: {e}]',
+                })
                 return
 
             if got_error:
+                self.messages.append({
+                    'role': 'assistant',
+                    'content': f'[Request failed: {stream_error_text}]',
+                })
                 return
 
             # Build assistant message
@@ -283,7 +299,17 @@ class Agent:
             # No tool calls → done
             if not tool_calls_raw:
                 if not content_text:
-                    yield {'type': 'content_done', 'content': '(no response)'}
+                    no_response = (
+                        'The model finished without returning text or a tool call. '
+                        'Try again or choose a different model with /model.'
+                    )
+                    logger.warning(
+                        "Empty streaming response: model=%s, round=%s",
+                        self.client.model,
+                        round_num,
+                    )
+                    msg['content'] = f'[No response: {no_response}]'
+                    yield {'type': 'error', 'text': no_response}
                 yield {'type': 'done'}
                 return
 

@@ -34,6 +34,10 @@ python /path/to/ai/bin/ai.py --web --host 127.0.0.1 --port 1432
 Function calling is enabled only for models listed in `TOOL_CAPABLE_MODELS`.
 Run `/model` to see model support or `/tools` to see the current tool status.
 If the selected model does not support tools, choose one marked `yes`.
+Register a custom NVIDIA model with `/model add <org/model> tools=yes` or
+`/model add <org/model> tools=no`. Tool support should only be enabled when that
+model's endpoint supports OpenAI-compatible function calling. Custom models are
+saved in ForgeCLI settings and appear in `/model` and `/api models`.
 
 The terminal help command (`/help`) lists chat and session commands. `/api help`
 lists API configuration and health commands. Errors are written to `ai/logs/forge.log`.

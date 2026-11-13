@@ -1,6 +1,7 @@
 """Configuration for ForgeCLI."""
 
 import os
+import re
 
 # Paths
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -66,6 +67,7 @@ TOOL_CAPABLE_MODELS = {
     'moonshotai/kimi-k2-thinking',
     'mistralai/mistral-nemotron',
 }
+CUSTOM_MODELS = {}
 
 # Non-chat models (embedding / vision-only). Skip entirely for chat.
 NON_CHAT_MODELS = {
@@ -123,7 +125,7 @@ APP_VERSION = '1.0.0'
 
 # Streaming
 STREAM_ENABLED = True
-STREAM_REFRESH_RATE = 15
+STREAM_REFRESH_RATE = 8
 
 # Web UI
 WEB_HOST = '0.0.0.0'
@@ -142,9 +144,39 @@ ALLOWED_UPLOAD_EXTENSIONS = {
 
 def model_supports_tools(model: str) -> bool:
     """Check if a model supports function calling / tools."""
-    return isinstance(model, str) and model in TOOL_CAPABLE_MODELS
+    if not isinstance(model, str):
+        return False
+    custom = CUSTOM_MODELS.get(model)
+    if custom is not None:
+        return bool(custom.get('tools_supported', False))
+    return model in TOOL_CAPABLE_MODELS
 
 
 def model_is_chat(model: str) -> bool:
     """Check if a model supports chat completions (not just embeddings)."""
-    return isinstance(model, str) and bool(model.strip()) and model not in NON_CHAT_MODELS
+    return (
+        isinstance(model, str)
+        and bool(model.strip())
+        and model not in NON_CHAT_MODELS
+        and '/' in model.strip()
+    )
+
+
+def valid_model_id(model: str) -> bool:
+    """Validate an NVIDIA model identifier in organization/model form."""
+    return isinstance(model, str) and bool(
+        re.fullmatch(r'[A-Za-z0-9._-]+/[A-Za-z0-9._-]+', model.strip())
+    )
+
+
+def configure_custom_models(models):
+    """Replace the in-memory registry with validated persisted custom models."""
+    global CUSTOM_MODELS
+    configured = {}
+    if isinstance(models, dict):
+        for model, options in models.items():
+            if valid_model_id(model) and model not in NON_CHAT_MODELS and isinstance(options, dict):
+                configured[model.strip()] = {
+                    'tools_supported': options.get('tools_supported') is True,
+                }
+    CUSTOM_MODELS = configured

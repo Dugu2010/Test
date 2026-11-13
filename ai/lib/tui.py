@@ -5,6 +5,7 @@ import sys
 import json
 import math
 import tempfile
+import time
 from typing import List
 from rich.console import Console, Group
 from rich.panel import Panel
@@ -51,8 +52,11 @@ from conf.conf import (
     STREAM_ENABLED,
     STREAM_REFRESH_RATE,
     WEB_PORT,
+    CUSTOM_MODELS,
+    configure_custom_models,
     model_is_chat,
     model_supports_tools,
+    valid_model_id,
 )
 
 STYLE_HEADER = "bold bright_cyan"
@@ -122,6 +126,7 @@ def _save_persisted_settings(settings: dict):
 
 def _apply_settings_to_agent(agent, settings: dict):
     """Apply persisted settings to an agent."""
+    configure_custom_models(settings.get('custom_models', {}))
     # Model
     saved_model = settings.get('model', DEFAULT_MODEL)
     if saved_model and saved_model != 'auto':
@@ -209,6 +214,9 @@ class AgentTUI:
             f"api_key={'set' if self.agent.client.api_key else 'not set'}"
         )
 
+    def _available_models(self):
+        return list(dict.fromkeys([*AVAILABLE_MODELS, *CUSTOM_MODELS]))
+
     def run(self):
         """Main run loop."""
         self._show_banner()
@@ -262,11 +270,14 @@ class AgentTUI:
         current_text = ''
         status_text = ''
         self._spin_tick = 0
+        cols, _ = get_terminal_size()
+        compact = cols < 60
+        last_refresh = 0.0
+        pending_content = False
+        refresh_interval = 1 / max(1, STREAM_REFRESH_RATE)
 
         def _build_display() -> Group:
             self._spin_tick += 1
-            cols, _ = get_terminal_size()
-            compact = cols < 60
             parts = list(display_parts)
 
             if current_text:
@@ -299,29 +310,42 @@ class AgentTUI:
             with Live(
                 _build_display(),
                 console=self.console,
-                refresh_per_second=STREAM_REFRESH_RATE,
+                auto_refresh=False,
                 vertical_overflow="visible",
             ) as live:
                 for event in self.agent.process_streaming(user_input):
-                    cols, _ = get_terminal_size()
-                    compact = cols < 60
                     etype = event.get('type', '')
 
                     if etype == 'status':
                         status_text = event['text']
                         live.update(_build_display())
+                        live.refresh()
 
                     elif etype == 'content_delta':
                         current_text += event['content']
-                        status_text = ''
-                        live.update(_build_display())
+                        status_text = 'Thinking...'
+                        pending_content = True
+                        now = time.monotonic()
+                        if now - last_refresh >= refresh_interval:
+                            live.update(_build_display())
+                            live.refresh()
+                            last_refresh = now
+                            pending_content = False
 
                     elif etype == 'content_done':
+                        status_text = ''
+                        if not current_text and event.get('content'):
+                            current_text = event['content']
+                        if pending_content:
+                            live.update(_build_display())
+                            live.refresh()
+                            pending_content = False
                         if current_text:
                             final_panel = self._render_final_text_panel(current_text, cols, compact)
                             display_parts.append(final_panel)
                             current_text = ''
                         live.update(_build_display())
+                        live.refresh()
 
                     elif etype == 'tool_exec':
                         status_text = f"{event['name']}"
@@ -330,6 +354,7 @@ class AgentTUI:
                         )
                         display_parts.append(tool_panel)
                         live.update(_build_display())
+                        live.refresh()
 
                     elif etype == 'tool_result':
                         status_text = ''
@@ -341,6 +366,7 @@ class AgentTUI:
                         )
                         display_parts.append(result_panel)
                         live.update(_build_display())
+                        live.refresh()
 
                     elif etype == 'error':
                         status_text = ''
@@ -351,6 +377,7 @@ class AgentTUI:
                             expand=True,
                         ))
                         live.update(_build_display())
+                        live.refresh()
 
                     elif etype == 'warning':
                         status_text = ''
@@ -362,10 +389,12 @@ class AgentTUI:
                             expand=True,
                         ))
                         live.update(_build_display())
+                        live.refresh()
 
                     elif etype == 'done':
                         status_text = ''
                         live.update(_build_display())
+                        live.refresh()
 
         except KeyboardInterrupt:
             self.console.print("\n[dim]Response interrupted.[/dim]")
@@ -594,6 +623,7 @@ class AgentTUI:
             ("/help, /h", "Show this help message"),
             ("/clear, /cls", "Clear screen"),
             ("/model [name|#]", "Show or change the model and tool support"),
+            ("/model add <org/model> [tools=yes|no]", "Register a custom NVIDIA model"),
             ("/tools", "List available tools"),
             ("/history", "Show conversation history"),
             ("/new", "Start new conversation session"),
@@ -621,6 +651,10 @@ class AgentTUI:
         self._show_banner()
 
     def _cmd_model(self, arg=''):
+        if arg.strip().lower().startswith('add '):
+            self._cmd_model_add(arg.strip()[4:])
+            return
+
         if not arg:
             self.console.print(f"[{STYLE_HEADER}]Current model:[/] {self.agent.client.model}\n")
             table = Table(title="Available Models", box=box.SIMPLE, expand=True)
@@ -628,20 +662,24 @@ class AgentTUI:
             table.add_column("Model", style="cyan")
             table.add_column("Tags", style="dim")
             table.add_column("Tools", style="green")
-            for i, model in enumerate(AVAILABLE_MODELS, 1):
+            for i, model in enumerate(self._available_models(), 1):
                 marker = " \u25c0" if model == self.agent.client.model else ""
                 meta = MODEL_META.get(model, {})
                 tags = ', '.join(meta.get('tags', [])[:3])
                 tool_status = "yes" if model_supports_tools(model) else "no"
                 table.add_row(str(i), f"{model}{marker}", tags, tool_status)
             self.console.print(table)
-            self.console.print(f"\n[{STYLE_MUTED}]Usage: /model <number or name>[/]")
+            self.console.print(
+                f"\n[{STYLE_MUTED}]Usage: /model <number or name> | "
+                "/model add <org/model> [tools=yes|no][/]"
+            )
         else:
             arg = arg.strip()
             if arg.isdigit():
                 idx = int(arg) - 1
-                if 0 <= idx < len(AVAILABLE_MODELS):
-                    arg = AVAILABLE_MODELS[idx]
+                models = self._available_models()
+                if 0 <= idx < len(models):
+                    arg = models[idx]
                 else:
                     self.console.print(f"[{STYLE_ERROR}]Invalid model number[/]")
                     return
@@ -652,6 +690,7 @@ class AgentTUI:
                 )
                 return
             self.agent.client.set_model(arg)
+            self.agent._update_system_prompt()
             # Persist model change
             settings = _load_persisted_settings()
             settings['model'] = arg
@@ -666,6 +705,60 @@ class AgentTUI:
                     f"[{STYLE_ERROR}]This model is not known to support tools. "
                     "Choose a model marked 'yes' to enable them.[/]"
                 )
+        self.console.print()
+
+    def _cmd_model_add(self, arg: str):
+        parts = arg.split()
+        if not parts or len(parts) > 2:
+            self.console.print(
+                f"[{STYLE_ERROR}]Usage: /model add <org/model> [tools=yes|no][/]"
+            )
+            return
+
+        model = parts[0].strip()
+        options = {'tools': 'no'}
+        if len(parts) == 2:
+            key, separator, value = parts[1].partition('=')
+            if not separator or key.lower() != 'tools' or value.lower() not in ('yes', 'no'):
+                self.console.print(
+                    f"[{STYLE_ERROR}]Use tools=yes or tools=no. "
+                    "Only set yes when the model endpoint supports function calling.[/]"
+                )
+                return
+            options['tools'] = value.lower()
+
+        if not valid_model_id(model):
+            self.console.print(
+                f"[{STYLE_ERROR}]Invalid model ID. Expected an NVIDIA model ID like org/model.[/]"
+            )
+            return
+        if model in AVAILABLE_MODELS:
+            self.console.print(
+                f"[{STYLE_ERROR}]That model is already in the built-in model list.[/]"
+            )
+            return
+        if model in CUSTOM_MODELS:
+            self.console.print(f"[{STYLE_ERROR}]That custom model is already registered.[/]")
+            return
+
+        settings = _load_persisted_settings()
+        custom_models = settings.get('custom_models', {})
+        if not isinstance(custom_models, dict):
+            custom_models = {}
+        custom_models[model] = {'tools_supported': options['tools'] == 'yes'}
+        settings['custom_models'] = custom_models
+        if not _save_persisted_settings(settings):
+            self.console.print(f"[{STYLE_ERROR}]Could not save custom model.[/]")
+            self.console.print()
+            return
+
+        configure_custom_models(custom_models)
+        self.console.print(f"[{STYLE_SUCCESS}]Added custom model: {model}[/]")
+        if options['tools'] == 'yes':
+            self.console.print(
+                f"[{STYLE_MUTED}]Tool support is enabled in ForgeCLI. "
+                "The provider must also support OpenAI-compatible function calling.[/]"
+            )
         self.console.print()
 
     def _cmd_history(self, _arg=''):
@@ -844,11 +937,11 @@ class AgentTUI:
         table.add_column("Tier", style="dim")
         table.add_column("Description", style="white")
 
-        for i, model in enumerate(AVAILABLE_MODELS, 1):
+        for i, model in enumerate(self._available_models(), 1):
             meta = MODEL_META.get(model, {})
             tags = ', '.join(meta.get('tags', [])[:3])
             tier = meta.get('tier', '')
-            desc = meta.get('desc', '')[:50]
+            desc = meta.get('desc', 'Custom NVIDIA model')[:50]
             marker = " \u25c0" if model == self.agent.client.model else ""
             name = model.split('/')[-1]
             table.add_row(str(i), f"{name}{marker}", tags, tier, desc)

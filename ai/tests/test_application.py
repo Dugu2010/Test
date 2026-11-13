@@ -14,13 +14,18 @@ from unittest.mock import Mock, patch
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(PROJECT_ROOT))
 
-from conf.conf import DEFAULT_MODEL, model_supports_tools
+from conf.conf import (
+    DEFAULT_MODEL,
+    configure_custom_models,
+    model_supports_tools,
+)
 from lib.agent import Agent
 from lib.api import NvidiaAPIClient
 from lib.tui import AgentTUI, _apply_settings_to_agent, _save_persisted_settings
 import main as application_main
 from main import _parse_args, _port
 from rich.console import Console
+from rich.text import Text
 
 
 class ApplicationTests(unittest.TestCase):
@@ -129,6 +134,120 @@ class ApplicationTests(unittest.TestCase):
         ui._cmd_tools()
 
         self.assertIn("disabled for the current model", output.getvalue())
+
+    def test_custom_model_is_persisted_with_explicit_tool_support(self):
+        output = StringIO()
+        ui = AgentTUI.__new__(AgentTUI)
+        ui.console = Console(file=output, width=100, force_terminal=False)
+        self.addCleanup(configure_custom_models, {})
+
+        with tempfile.TemporaryDirectory() as temp_dir:
+            settings_path = Path(temp_dir) / "settings.json"
+            with patch("lib.tui.SETTINGS_FILE", str(settings_path)):
+                ui._cmd_model_add("nvidia/custom-chat tools=yes")
+                saved = json.loads(settings_path.read_text())
+
+        self.assertTrue(saved["custom_models"]["nvidia/custom-chat"]["tools_supported"])
+        self.assertTrue(model_supports_tools("nvidia/custom-chat"))
+        self.assertIn("Added custom model", output.getvalue())
+
+    def test_custom_model_requires_valid_id_and_tool_option(self):
+        output = StringIO()
+        ui = AgentTUI.__new__(AgentTUI)
+        ui.console = Console(file=output, width=100, force_terminal=False)
+        with patch("lib.tui._save_persisted_settings") as save:
+            ui._cmd_model_add("not-a-model tools=yes")
+            ui._cmd_model_add("nvidia/custom-chat tools=maybe")
+        save.assert_not_called()
+        self.assertFalse(model_supports_tools("nvidia/custom-chat"))
+        self.assertIn("Invalid model ID", output.getvalue())
+        self.assertIn("Use tools=yes or tools=no", output.getvalue())
+
+    def test_streaming_redraw_is_throttled_and_terminal_size_is_cached(self):
+        output = StringIO()
+        ui = AgentTUI.__new__(AgentTUI)
+        ui.console = Console(file=output, width=80, force_terminal=False)
+        ui.agent = SimpleNamespace(process_streaming=lambda _prompt: iter([
+            {"type": "status", "text": "Thinking..."},
+            *({"type": "content_delta", "content": "x"} for _ in range(10)),
+            {"type": "content_done", "content": "xxxxxxxxxx"},
+            {"type": "done"},
+        ]))
+        live = Mock()
+        live.__enter__ = Mock(return_value=live)
+        live.__exit__ = Mock(return_value=False)
+
+        with (
+            patch("lib.tui.get_terminal_size", return_value=(80, 24)) as get_size,
+            patch("lib.tui.Live", return_value=live) as live_factory,
+            patch("lib.tui.time.monotonic", return_value=1.0),
+        ):
+            ui._process_streaming("hello")
+
+        get_size.assert_called_once_with()
+        self.assertFalse(live_factory.call_args.kwargs["auto_refresh"])
+        self.assertLess(live.refresh.call_count, 10)
+        streaming_frame = StringIO()
+        Console(file=streaming_frame, width=80, force_terminal=False).print(
+            live.update.call_args_list[1].args[0]
+        )
+        self.assertIn("Thinking...", streaming_frame.getvalue())
+        self.assertIn("·", streaming_frame.getvalue())
+
+    def test_empty_stream_response_is_visible_and_turn_is_closed(self):
+        agent = Agent()
+        agent.client.chat_stream = Mock(return_value=iter([
+            {"type": "stream_end"},
+        ]))
+        try:
+            events = list(agent.process_streaming("hello"))
+            self.assertTrue(any(event["type"] == "error" for event in events))
+            self.assertEqual(agent.messages[-1]["role"], "assistant")
+            self.assertIn("No response", agent.messages[-1]["content"])
+        finally:
+            agent.client.session.close()
+
+    def test_tui_renders_content_done_when_no_deltas_arrived(self):
+        output = StringIO()
+        ui = AgentTUI.__new__(AgentTUI)
+        ui.console = Console(file=output, width=80, force_terminal=False)
+        ui.agent = SimpleNamespace(process_streaming=lambda _prompt: iter([
+            {"type": "content_done", "content": "Recovered response"},
+            {"type": "done"},
+        ]))
+        rendered = Mock(return_value=Text("Recovered response"))
+        ui._render_final_text_panel = rendered
+        live = Mock()
+        live.__enter__ = Mock(return_value=live)
+        live.__exit__ = Mock(return_value=False)
+
+        with (
+            patch("lib.tui.get_terminal_size", return_value=(80, 24)),
+            patch("lib.tui.Live", return_value=live),
+        ):
+            ui._process_streaming("hello")
+
+        rendered.assert_called_once_with("Recovered response", 80, False)
+
+    def test_stream_error_closes_turn_before_next_user_input(self):
+        agent = Agent()
+        agent.client.chat_stream = Mock(return_value=iter([
+            {"type": "error", "message": "API unavailable"},
+        ]))
+        try:
+            events = list(agent.process_streaming("first turn"))
+            self.assertTrue(any(event["type"] == "error" for event in events))
+            self.assertEqual(agent.messages[-1]["role"], "assistant")
+
+            agent.client.chat_stream = Mock(return_value=iter([
+                {"type": "content_delta", "content": "recovered"},
+                {"type": "stream_end"},
+            ]))
+            list(agent.process_streaming("second turn"))
+            self.assertEqual(agent.messages[-2]["role"], "user")
+            self.assertEqual(agent.messages[-1]["role"], "assistant")
+        finally:
+            agent.client.session.close()
 
     def test_tool_rejection_is_reported_and_retry_omits_tools(self):
         client = NvidiaAPIClient()
